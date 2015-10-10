@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="JKRLrcView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ylr-dD-NST">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <animations/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="6gA-gc-vre"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="b9y-TG-Y5f"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ylr-dD-NST" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LUS-p4-PGn"/>
+                <constraint firstItem="Ylr-dD-NST" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ltp-Bw-skb"/>
+                <constraint firstAttribute="bottom" secondItem="Ylr-dD-NST" secondAttribute="bottom" id="lWJ-lN-hdy"/>
+                <constraint firstAttribute="trailing" secondItem="Ylr-dD-NST" secondAttribute="trailing" id="ni5-dG-ZUD"/>
+            </constraints>
+            <connections>
+                <outlet property="tableView" destination="Ylr-dD-NST" id="JrM-oh-NSy"/>
+            </connections>
+        </view>
+    </objects>
+</document>
