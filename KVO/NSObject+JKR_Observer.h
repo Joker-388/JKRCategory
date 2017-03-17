@@ -2,8 +2,8 @@
 //  NSObject+JKR_Observer.h
 //  JKRUIViewDemo
 //
-//  Created by Lucky on 17/1/16.
-//  Copyright © 2017年 Lucky. All rights reserved.
+//  Created by tronsis_ios on 17/3/16.
+//  Copyright © 2017年 tronsis_ios. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
