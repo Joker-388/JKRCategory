@@ -10,6 +10,7 @@
 
 @interface NSObject (JKR_RunTime)
 
+/// 属性列表
 - (NSArray<NSString *> *)jkr_ivarList;
 
 @end

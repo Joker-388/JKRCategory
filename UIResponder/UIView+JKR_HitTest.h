@@ -10,6 +10,7 @@
 
 @interface UIView (JKR_HitTest)
 
+/// 自定义hitHest方法
 - (UIView *)jkr_hitTest:(CGPoint)point withEvent:(UIEvent *)event;
 
 @end
