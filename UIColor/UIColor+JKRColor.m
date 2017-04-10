@@ -18,6 +18,10 @@
     return nil;
 }
 
++ (UIColor *)jkr_colorWithRed:(NSUInteger)red green:(NSUInteger)green blue:(NSUInteger)blue alpha:(CGFloat)alpha{
+    return [UIColor colorWithRed:red / 255.f green:green / 255.f blue:blue / 255.f alpha:alpha];
+}
+
 static inline NSUInteger hexStringToNSUInteger(NSString *str) {
     uint32_t result = 0;
     sscanf([str UTF8String], "%X", &result);
@@ -48,7 +52,7 @@ static BOOL hexStringToRGBA(NSString *str, CGFloat *r, CGFloat *g, CGFloat *b, C
         *g = hexStringToNSUInteger([str substringWithRange:NSMakeRange(2, 2)]) / 255.f;
         *b = hexStringToNSUInteger([str substringWithRange:NSMakeRange(4, 2)]) / 255.f;
         if (length == 8) *a = hexStringToNSUInteger([str substringWithRange:NSMakeRange(6, 2)]) / 255.f;
-        else *a = 1;
+        else *a = 1.f;
     }
     return YES;
 }

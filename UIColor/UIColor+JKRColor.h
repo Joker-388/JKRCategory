@@ -11,5 +11,6 @@
 @interface UIColor (JKRColor)
 
 + (UIColor *)jkr_colorWithHexString:(NSString *)hexString;
++ (UIColor *)jkr_colorWithRed:(NSUInteger)red green:(NSUInteger)green blue:(NSUInteger)blue alpha:(CGFloat)alpha;
 
 @end
