@@ -14,14 +14,29 @@
 + (UIImage *)jkr_imageWithColor:(UIColor *)color;
 /// 通过颜色获取一张规定尺寸的图片
 + (UIImage *)jkr_imageWithColor:(UIColor *)color size:(CGSize)size;
+/// 将图片裁剪成一张圆形图片
+- (UIImage *)jkr_clipCircleImageWithBorder:(CGFloat)borderWidth withColor:(UIColor *)borderColor;
 /// 将图片压缩到指定宽度
 - (UIImage *)jkr_compressWithWidth:(CGFloat)width;
-/// 将图片在子线程中压缩，block在主线层回调
+/// 将图片在子线程中压缩，block在主线层回调，保证压缩到指定文件大小，尽量减少失真
 - (void)jkr_compressToDataLength:(NSInteger)length withBlock:(void(^)(NSData *data))block;
-
-/// 尽量将图片压缩到指定大小
+/// 尽量将图片压缩到指定大小，不一定满足条件
 - (void)jkr_tryCompressToDataLength:(NSInteger)length withBlock:(void(^)(NSData *data))block;
-/// 快速将图片压缩到指定大小
+/// 快速将图片压缩到指定大小，失真严重
 - (void)jkr_fastCompressToDataLength:(NSInteger)length withBlock:(void(^)(NSData *data))block;
+/// 通过修改r.g.b像素点来处理图片
+- (void)jkr_fliterImageWithFliterBlock:(void(^)(int *red, int *green, int *blue))Fliterblock success:(void(^)(UIImage *image))success;
+/**
+ [_albumImage jkr_fliterImageWithFliterBlock:^(int *red, int *green, int *blue) {
+    int gray = (*red + *green + *blue) / 3;
+    *red = gray;
+    *green = gray;
+    *blue = gray;
+ } success:^(UIImage *image) {
+    [_pngImageV setImage:image];
+ }];
+*/
+
+
 
 @end

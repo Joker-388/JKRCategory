@@ -7,6 +7,7 @@
 //
 
 #import "UIImage+JKRImage.h"
+#import <CoreFoundation/CoreFoundation.h>
 
 @implementation UIImage (JKRImage)
 
@@ -24,6 +25,28 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
+}
+
+- (UIImage *)jkr_clipCircleImageWithBorder:(CGFloat)borderWidth withColor:(UIColor *)borderColor {
+    CGFloat dia;
+    if (self.size.width >= self.size.height) {
+        dia = self.size.height;
+    } else {
+        dia = self.size.width;
+    }
+    CGRect mframe = CGRectMake(0, 0, dia + borderWidth * 2, dia + borderWidth * 2);
+    UIGraphicsBeginImageContextWithOptions(mframe.size, NO, 0.0f);
+    UIBezierPath *pathCir = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, mframe.size.width, mframe.size.height)];
+    CGContextRef ctr = UIGraphicsGetCurrentContext();
+    [borderColor setFill];
+    CGContextAddPath(ctr, pathCir.CGPath);
+    CGContextFillPath(ctr);
+    UIBezierPath *pathClip = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(borderWidth, borderWidth, dia, dia)];
+    [pathClip addClip];
+    [self drawAtPoint:CGPointMake(borderWidth, borderWidth)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 - (UIImage *)jkr_compressWithWidth:(CGFloat)width {
@@ -70,6 +93,7 @@
 }
 
 - (void)jkr_tryCompressToDataLength:(NSInteger)length withBlock:(void (^)(NSData *))block {
+    if (length <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) block(nil);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         CGFloat scale = 0.9;
         NSData *scaleData = UIImageJPEGRepresentation(self, scale);
@@ -88,6 +112,7 @@
 }
 
 - (void)jkr_fastCompressToDataLength:(NSInteger)length withBlock:(void (^)(NSData *))block {
+    if (length <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) block(nil);
     CGFloat scale = 1.0;
     UIImage *newImage = [self copy];
      NSInteger newImageLength = UIImageJPEGRepresentation(newImage, 1.0).length;
@@ -105,6 +130,46 @@
     }
     dispatch_async(dispatch_get_main_queue(), ^{
         block(UIImageJPEGRepresentation(newImage, 1.0));
+    });
+}
+
+- (void)jkr_fliterImageWithFliterBlock:(void (^)(int *, int *, int *))Fliterblock success:(void (^)(UIImage *))success{
+    if ([self isKindOfClass:[NSNull class]] || self == nil) return;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        CGImageRef imageRef = self.CGImage;
+        size_t width = CGImageGetWidth(imageRef);
+        size_t height = CGImageGetHeight(imageRef);
+        size_t bits = CGImageGetBitsPerComponent(imageRef);
+        size_t bitsPerRow = CGImageGetBytesPerRow(imageRef);
+        CGColorSpaceRef colorSpace = CGImageGetColorSpace(imageRef);
+        int alphaInfo = CGImageGetAlphaInfo(imageRef);
+        CGDataProviderRef providerRef = CGImageGetDataProvider(imageRef);
+        CFDataRef dataRef = CGDataProviderCopyData(providerRef);
+        int length = (int)CFDataGetLength(dataRef);
+        UInt8 *pixelBuf = (UInt8 *)CFDataGetMutableBytePtr((CFMutableDataRef)dataRef);
+        for (int i = 0; i < length; i+=4) {
+            //////修改原始像素RGB数据
+            int offsetR = i;
+            int offsetG = i + 1;
+            int offsetB = i + 2;
+            int red = pixelBuf[offsetR];
+            int green = pixelBuf[offsetG];
+            int blue = pixelBuf[offsetB];
+            Fliterblock(&red, &green, &blue);
+            pixelBuf[offsetR] = red;
+            pixelBuf[offsetG] = green;
+            pixelBuf[offsetB] = blue;
+        }
+        
+        CGContextRef contextRef = CGBitmapContextCreate(pixelBuf, width, height, bits, bitsPerRow, colorSpace, alphaInfo);
+        CGImageRef backImageRef = CGBitmapContextCreateImage(contextRef);
+        UIImage *backImage = [UIImage imageWithCGImage:backImageRef scale:[UIScreen mainScreen].scale orientation:self.imageOrientation];
+        CFRelease(dataRef);
+        CFRelease(contextRef);
+        CFRelease(backImageRef);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            success(backImage);
+        });
     });
 }
 
