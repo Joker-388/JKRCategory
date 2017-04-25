@@ -17,8 +17,11 @@
 /// 将图片压缩到指定宽度
 - (UIImage *)jkr_compressWithWidth:(CGFloat)width;
 /// 将图片在子线程中压缩，block在主线层回调
-- (void)jkr_compressToDataLength:(NSInteger)length withBlock:(void(^)(UIImage *image))block;
-/// 将图片在当前线程中压缩
-- (UIImage *)jkr_compressToDataLength:(NSInteger)length;
+- (void)jkr_compressToDataLength:(NSInteger)length withBlock:(void(^)(NSData *data))block;
+
+/// 尽量将图片压缩到指定大小
+- (void)jkr_tryCompressToDataLength:(NSInteger)length withBlock:(void(^)(NSData *data))block;
+/// 快速将图片压缩到指定大小
+- (void)jkr_fastCompressToDataLength:(NSInteger)length withBlock:(void(^)(NSData *data))block;
 
 @end

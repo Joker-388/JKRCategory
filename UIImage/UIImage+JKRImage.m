@@ -36,37 +36,63 @@
     return newImage;
 }
 
-- (void)jkr_compressToDataLength:(NSInteger)length withBlock :(void (^)(UIImage *))block {
+- (void)jkr_compressToDataLength:(NSInteger)length withBlock :(void (^)(NSData *))block {
     if (length <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) block(nil);
-    __weak typeof(self) weakSelf = self;
+
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        __strong typeof(weakSelf) strongSelf = weakSelf;
-        UIImage *newImage = [strongSelf copy];
-        CGFloat scale = 1.0;
-        NSInteger newImageLength = UIImagePNGRepresentation(newImage).length;
-        while (newImageLength > length) {
-            // 如果限定的大小比当前的尺寸大0.9的平方倍，就用开方求缩放倍数,减少缩放次数
-            if ((double)length / (double)newImageLength < 0.81) {
-                scale = sqrtf((double)length / (double)newImageLength);
-            } else {
-                scale = 0.9;
+        UIImage *newImage = [self copy];
+        {
+            CGFloat scale = 0.9;
+            NSData *pngData = UIImagePNGRepresentation(self);
+            NSLog(@"Original pnglength %zd", pngData.length);
+            NSData *jpgData = UIImageJPEGRepresentation(self, scale);
+            NSLog(@"Original jpglength %zd", pngData.length);
+            
+            while (jpgData.length > length) {
+                newImage = [newImage jkr_compressWithWidth:newImage.size.width * scale];
+                NSData *newImageData = UIImageJPEGRepresentation(newImage, 0.0);
+                if (newImageData.length < length) {
+                    CGFloat scale = 1.0;
+                    newImageData = UIImageJPEGRepresentation(newImage, scale);
+                    while (newImageData.length > length) {
+                        scale -= 0.1;
+                        newImageData = UIImageJPEGRepresentation(newImage, scale);
+                    }
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        NSLog(@"Result jpglength %zd", newImageData.length);
+                        block(newImageData);
+                    });
+                    return;
+                }
             }
-            CGFloat width = newImage.size.width * scale;
-            newImage = [newImage jkr_compressWithWidth:width];
-            newImageLength = UIImagePNGRepresentation(newImage).length;
+        }
+    });
+}
+
+- (void)jkr_tryCompressToDataLength:(NSInteger)length withBlock:(void (^)(NSData *))block {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        CGFloat scale = 0.9;
+        NSData *scaleData = UIImageJPEGRepresentation(self, scale);
+        while (scaleData.length > length) {
+            scale -= 0.1;
+            if (scale < 0) {
+                break;
+            }
+            NSLog(@"%f", scale);
+            scaleData = UIImageJPEGRepresentation(self, scale);
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            block(newImage);
+            block(scaleData);
         });
     });
 }
 
-- (UIImage *)jkr_compressToDataLength:(NSInteger)length {
-    if (length <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) return nil;
-    UIImage *newImage = [self copy];
+- (void)jkr_fastCompressToDataLength:(NSInteger)length withBlock:(void (^)(NSData *))block {
     CGFloat scale = 1.0;
-    NSInteger newImageLength = UIImagePNGRepresentation(newImage).length;
+    UIImage *newImage = [self copy];
+     NSInteger newImageLength = UIImageJPEGRepresentation(newImage, 1.0).length;
     while (newImageLength > length) {
+        NSLog(@"Do compress");
         // 如果限定的大小比当前的尺寸大0.9的平方倍，就用开方求缩放倍数,减少缩放次数
         if ((double)length / (double)newImageLength < 0.81) {
             scale = sqrtf((double)length / (double)newImageLength);
@@ -75,9 +101,11 @@
         }
         CGFloat width = newImage.size.width * scale;
         newImage = [newImage jkr_compressWithWidth:width];
-        newImageLength = UIImagePNGRepresentation(newImage).length;
+        newImageLength = UIImageJPEGRepresentation(newImage, 1.0).length;
     }
-    return newImage;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        block(UIImageJPEGRepresentation(newImage, 1.0));
+    });
 }
 
 @end
