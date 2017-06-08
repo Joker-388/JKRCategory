@@ -1,15 +1,15 @@
 //
-//  JKRMD5.m
+//  NSString+JKRMD5.m
 //  JKRBaseProject
 //
-//  Created by Joker on 2017/4/24.
+//  Created by Lucky on 2017/6/8.
 //  Copyright © 2017年 Joker. All rights reserved.
 //
 
-#import "JKRMD5.h"
+#import "NSString+JKRMD5.h"
 #import <CommonCrypto/CommonDigest.h>
 
-@implementation JKRMD5
+@implementation NSString (JKRMD5)
 
 -(NSString *)jkr_md5String {
     CC_MD5_CTX md5;

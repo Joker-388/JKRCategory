@@ -1,14 +1,14 @@
 //
-//  JKRMD5.h
+//  NSString+JKRMD5.h
 //  JKRBaseProject
 //
-//  Created by Joker on 2017/4/24.
+//  Created by Lucky on 2017/6/8.
 //  Copyright © 2017年 Joker. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface JKRMD5 : NSString
+@interface NSString (JKRMD5)
 
 - (NSString *)jkr_md5String;
 
