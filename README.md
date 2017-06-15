@@ -140,3 +140,15 @@ UIViewController+JKRStatusBarStyle:设置当前控制器下状态栏的颜色
 ```
 self.jkr_lightStatusBar = YES;
 ```
+
+NSDate+JKRDate:便携获取NSDate对象相关属性
+```
+NSDate *now = [NSDate date];
+NSInteger year = [now year];
+NSInteger month = [now month];
+NSInteger day = [now day];
+NSInteger hour = [now hour];
+NSInteger minute = [now minute];
+NSInteger second = [now second];
+NSString *formatString = [now string];
+```
