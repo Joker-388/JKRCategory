@@ -88,6 +88,8 @@
                     return;
                 }
             }
+            
+            block(jpgData);
         }
     });
 }
