@@ -24,18 +24,28 @@
 - (void)jkr_tryCompressToDataLength:(NSInteger)length withBlock:(void(^)(NSData *data))block;
 /// 快速将图片压缩到指定大小，失真严重
 - (void)jkr_fastCompressToDataLength:(NSInteger)length withBlock:(void(^)(NSData *data))block;
-/// 通过修改r.g.b像素点来处理图片
-- (void)jkr_fliterImageWithFliterBlock:(void(^)(int *red, int *green, int *blue))Fliterblock success:(void(^)(UIImage *image))success;
+
 /**
+ 通过修改r.g.b像素点来处理图片
+ 
+ @discussion
  [_albumImage jkr_fliterImageWithFliterBlock:^(int *red, int *green, int *blue) {
-    int gray = (*red + *green + *blue) / 3;
-    *red = gray;
-    *green = gray;
-    *blue = gray;
+ int gray = (*red + *green + *blue) / 3;
+ *red = gray;
+ *green = gray;
+ *blue = gray;
  } success:^(UIImage *image) {
-    [_pngImageV setImage:image];
+ [_pngImageV setImage:image];
  }];
-*/
+ */
+- (void)jkr_fliterImageWithFliterBlock:(void(^)(int *red, int *green, int *blue))Fliterblock success:(void(^)(UIImage *image))success;
+
+/**
+ 传入需要的占位图尺寸 获取占位图
+ @param size 需要的站位图尺寸
+ @return 占位图
+ */
++ (UIImage *)placeholderImageWithSize:(CGSize)size;
 
 
 

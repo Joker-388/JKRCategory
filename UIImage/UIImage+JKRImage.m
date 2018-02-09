@@ -69,7 +69,7 @@
             NSData *pngData = UIImagePNGRepresentation(self);
             NSLog(@"Original pnglength %zd", pngData.length);
             NSData *jpgData = UIImageJPEGRepresentation(self, scale);
-            NSLog(@"Original jpglength %zd", pngData.length);
+            NSLog(@"Original jpglength %zd", jpgData.length);
             
             while (jpgData.length > length) {
                 newImage = [newImage jkr_compressWithWidth:newImage.size.width * scale];
@@ -88,7 +88,6 @@
                     return;
                 }
             }
-            
             block(jpgData);
         }
     });
@@ -139,33 +138,58 @@
     if ([self isKindOfClass:[NSNull class]] || self == nil) return;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         CGImageRef imageRef = self.CGImage;
+        // 图片宽度
         size_t width = CGImageGetWidth(imageRef);
+        // 图片高度
         size_t height = CGImageGetHeight(imageRef);
+        // 每个颜色值存储的字节数
         size_t bits = CGImageGetBitsPerComponent(imageRef);
+        // 每行的字节数
         size_t bitsPerRow = CGImageGetBytesPerRow(imageRef);
-        CGColorSpaceRef colorSpace = CGImageGetColorSpace(imageRef);
+        // 透明度
         int alphaInfo = CGImageGetAlphaInfo(imageRef);
+        // colorSpace RGBA AGBR RGB: 颜色空间
+        CGColorSpaceRef colorSpace = CGImageGetColorSpace(imageRef);
+        // bitmap data provider:bitmap数据提供器
         CGDataProviderRef providerRef = CGImageGetDataProvider(imageRef);
+        // bitmap data:bitmap数据
         CFDataRef dataRef = CGDataProviderCopyData(providerRef);
+        // bitmap数据长度
         int length = (int)CFDataGetLength(dataRef);
-        UInt8 *pixelBuf = (UInt8 *)CFDataGetMutableBytePtr((CFMutableDataRef)dataRef);
-        for (int i = 0; i < length; i+=4) {
-            //////修改原始像素RGB数据
+        // 颜色通道字符格式数组
+        Byte *pixelBuf = (UInt8 *)CFDataGetMutableBytePtr((CFMutableDataRef)dataRef);
+        // 遍历颜色通道数据，4个一组，RGBA
+        for (int i = 0; i < length; i+=4) { // i+=4因为4个一组:RGBA
+            // 原始R序列号
             int offsetR = i;
+            // 原始G序列号
             int offsetG = i + 1;
+            // 原始B序列号
             int offsetB = i + 2;
+            // 原始A序列号
+            int offsetA = i + 3;
+            // 原始R值
             int red = pixelBuf[offsetR];
+            // 原始G值
             int green = pixelBuf[offsetG];
+            // 原始B值
             int blue = pixelBuf[offsetB];
+            // 原始A值
+            int alpha = pixelBuf[offsetA];
+            // 修改原始像素RGB数据
             Fliterblock(&red, &green, &blue);
+            // 用修改的RGB数据替换原数据
             pixelBuf[offsetR] = red;
             pixelBuf[offsetG] = green;
             pixelBuf[offsetB] = blue;
+            pixelBuf[offsetA] = alpha;
         }
-        
+        // bitmap生成上下文
         CGContextRef contextRef = CGBitmapContextCreate(pixelBuf, width, height, bits, bitsPerRow, colorSpace, alphaInfo);
+        // 通过上下文生成图片
         CGImageRef backImageRef = CGBitmapContextCreateImage(contextRef);
         UIImage *backImage = [UIImage imageWithCGImage:backImageRef scale:[UIScreen mainScreen].scale orientation:self.imageOrientation];
+        // 内存释放
         CFRelease(dataRef);
         CFRelease(contextRef);
         CFRelease(backImageRef);
@@ -175,4 +199,30 @@
     });
 }
 
+/**
+ 传入需要的占位图尺寸 获取占位图
+ @param size 需要的站位图尺寸
+ @return 占位图
+ */
++ (UIImage *)placeholderImageWithSize:(CGSize)size {
+    
+    // 占位图的背景色
+    UIColor *backgroundColor = [UIColor colorWithRGB:0xF7F7F7];
+    // 中间LOGO图片
+    UIImage *image = [UIImage imageNamed:@"bannerPlacehold"];
+    // 根据占位图需要的尺寸 计算 中间LOGO的宽高
+    CGSize logoSize = CGSizeMake(72, 54);
+    // 打开上下文
+    UIGraphicsBeginImageContextWithOptions(size,0, [UIScreen mainScreen].scale);
+    // 绘图
+    [backgroundColor set];
+    UIRectFill(CGRectMake(0,0, size.width, size.height));
+    CGFloat imageX = (size.width / 2) - (logoSize.width / 2);
+    CGFloat imageY = (size.height / 2) - (logoSize.height / 2);
+    [image drawInRect:CGRectMake(imageX, imageY, logoSize.width, logoSize.height)];
+    UIImage *resImage = UIGraphicsGetImageFromCurrentImageContext();
+    // 关闭上下文
+    UIGraphicsEndImageContext();
+    return resImage;
+}
 @end
