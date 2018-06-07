@@ -61,7 +61,7 @@
 
 - (void)jkr_compressToDataLength:(NSInteger)length withBlock :(void (^)(NSData *))block {
     if (length <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) block(nil);
-
+    
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         UIImage *newImage = [self copy];
         {
@@ -84,11 +84,13 @@
                     dispatch_async(dispatch_get_main_queue(), ^{
                         NSLog(@"Result jpglength %zd", newImageData.length);
                         block(newImageData);
+                        return;
                     });
-                    return;
                 }
             }
-            block(jpgData);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                block(jpgData);
+            });
         }
     });
 }
