@@ -89,6 +89,11 @@
                     jpgData = UIImageJPEGRepresentation(newImageData, 1.0);
                 }
             }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSLog(@"Result jpglength %zd", jpgData.length);
+                block(jpgData);
+            });
         }
     });
 }
