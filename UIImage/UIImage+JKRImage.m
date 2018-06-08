@@ -84,8 +84,8 @@
                     dispatch_async(dispatch_get_main_queue(), ^{
                         NSLog(@"Result jpglength %zd", newImageData.length);
                         block(newImageData);
-                        return;
                     });
+                    return;
                 }
             }
             dispatch_async(dispatch_get_main_queue(), ^{
