@@ -65,14 +65,12 @@
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         UIImage *newImage = [self copy];
         {
-            CGFloat scale = 0.9;
+            CGFloat clipScale = 0.9;
             NSData *pngData = UIImagePNGRepresentation(self);
             NSLog(@"Original pnglength %zd", pngData.length);
-            NSData *jpgData = UIImageJPEGRepresentation(self, scale);
+            NSData *jpgData = UIImageJPEGRepresentation(self, 1.0);
             NSLog(@"Original jpglength %zd", jpgData.length);
-            
             while (jpgData.length > length) {
-                newImage = [newImage jkr_compressWithWidth:newImage.size.width * scale];
                 NSData *newImageData = UIImageJPEGRepresentation(newImage, 0.0);
                 if (newImageData.length < length) {
                     CGFloat scale = 1.0;
@@ -86,11 +84,11 @@
                         block(newImageData);
                     });
                     return;
+                } else {
+                    newImage = [newImage jkr_compressWithWidth:newImage.size.width * clipScale];
+                    jpgData = UIImageJPEGRepresentation(newImageData, 1.0);
                 }
             }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                block(jpgData);
-            });
         }
     });
 }
