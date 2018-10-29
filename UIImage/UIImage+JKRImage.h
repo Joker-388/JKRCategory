@@ -40,13 +40,6 @@
  */
 - (void)jkr_fliterImageWithFliterBlock:(void(^)(int *red, int *green, int *blue))Fliterblock success:(void(^)(UIImage *image))success;
 
-/**
- 传入需要的占位图尺寸 获取占位图
- @param size 需要的站位图尺寸
- @return 占位图
- */
-+ (UIImage *)placeholderImageWithSize:(CGSize)size;
-
-
++ (UIImage *)jkr_imaginaryLineWithTotalLength:(CGFloat)totalLength height:(CGFloat)height perLength:(CGFloat)perLength intervalLength:(CGFloat)intervalLength lineColor:(UIColor *)lineColor;
 
 @end

@@ -86,7 +86,7 @@
                     return;
                 } else {
                     newImage = [newImage jkr_compressWithWidth:newImage.size.width * clipScale];
-                    jpgData = UIImageJPEGRepresentation(newImageData, 1.0);
+                    jpgData = UIImageJPEGRepresentation(newImage, 1.0);
                 }
             }
             
@@ -204,30 +204,24 @@
     });
 }
 
-/**
- 传入需要的占位图尺寸 获取占位图
- @param size 需要的站位图尺寸
- @return 占位图
- */
-+ (UIImage *)placeholderImageWithSize:(CGSize)size {
++ (UIImage *)jkr_imaginaryLineWithTotalLength:(CGFloat)totalLength height:(CGFloat)height perLength:(CGFloat)perLength intervalLength:(CGFloat)intervalLength lineColor:(UIColor *)lineColor {
+    CGSize size = CGSizeMake(totalLength, height);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    if (!context) return nil;
     
-    // 占位图的背景色
-    UIColor *backgroundColor = [UIColor colorWithRGB:0xF7F7F7];
-    // 中间LOGO图片
-    UIImage *image = [UIImage imageNamed:@"bannerPlacehold"];
-    // 根据占位图需要的尺寸 计算 中间LOGO的宽高
-    CGSize logoSize = CGSizeMake(72, 54);
-    // 打开上下文
-    UIGraphicsBeginImageContextWithOptions(size,0, [UIScreen mainScreen].scale);
-    // 绘图
-    [backgroundColor set];
-    UIRectFill(CGRectMake(0,0, size.width, size.height));
-    CGFloat imageX = (size.width / 2) - (logoSize.width / 2);
-    CGFloat imageY = (size.height / 2) - (logoSize.height / 2);
-    [image drawInRect:CGRectMake(imageX, imageY, logoSize.width, logoSize.height)];
-    UIImage *resImage = UIGraphicsGetImageFromCurrentImageContext();
-    // 关闭上下文
+    [lineColor setFill];
+    CGContextSetLineWidth(context, height);
+    
+    for (int i = 0; i < totalLength; i+= (intervalLength + intervalLength)) {
+        CGContextMoveToPoint(context, i * (perLength + intervalLength), 0.5);
+        CGContextAddLineToPoint(context, i * (perLength + intervalLength) + perLength, 0.5);
+    }
+    CGContextStrokePath(context);
+    
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    return resImage;
+    return image;
 }
+
 @end
