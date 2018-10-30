@@ -60,8 +60,10 @@
 }
 
 - (void)jkr_compressToDataLength:(NSInteger)length withBlock :(void (^)(NSData *))block {
-    if (length <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) block(nil);
-    
+    if (length <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) {
+        block(nil);
+        return;
+    }
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         UIImage *newImage = [self copy];
         {
@@ -89,7 +91,6 @@
                     jpgData = UIImageJPEGRepresentation(newImage, 1.0);
                 }
             }
-            
             dispatch_async(dispatch_get_main_queue(), ^{
                 NSLog(@"Result jpglength %zd", jpgData.length);
                 block(jpgData);
@@ -209,16 +210,13 @@
     UIGraphicsBeginImageContextWithOptions(size, NO, 0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     if (!context) return nil;
-    
     [lineColor setFill];
     CGContextSetLineWidth(context, height);
-    
     for (int i = 0; i < totalLength; i+= (intervalLength + intervalLength)) {
         CGContextMoveToPoint(context, i * (perLength + intervalLength), 0.5);
         CGContextAddLineToPoint(context, i * (perLength + intervalLength) + perLength, 0.5);
     }
     CGContextStrokePath(context);
-    
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
