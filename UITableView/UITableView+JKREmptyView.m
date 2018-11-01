@@ -69,6 +69,8 @@
             }
         }
         self.placeHolderView.hidden = !isEmpty;
+    } else {
+        self.placeHolderView.hidden = NO;
     }
 }
 
