@@ -10,6 +10,7 @@
 
 @interface UITextView (JKRPlaceHolder)
 
+/// 有问题，先不要用
 @property (nonatomic, strong) NSString *placeHolder;
 
 @end

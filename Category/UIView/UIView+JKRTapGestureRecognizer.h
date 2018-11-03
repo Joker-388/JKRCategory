@@ -12,6 +12,7 @@ typedef void(^tapGestureRecognizerBlock)(UIGestureRecognizer *gestureRecognizer)
 
 @interface UIView (JKRTapGestureRecognizer)
 
+/// 给控件添加一个点击手势并在block中处理
 - (void)jkr_addTapGestureRecognizerWithBlock:(tapGestureRecognizerBlock)block;
 
 @end

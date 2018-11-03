@@ -26,22 +26,22 @@
     });
 }
 
-- (void)setPlaceHolderView:(UIView *)placeHolderView {
-    objc_setAssociatedObject(self, @selector(placeHolderView), placeHolderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    placeHolderView.hidden = YES;
-    [self insertSubview:placeHolderView atIndex:0];
+- (void)setJkr_placeHolderView:(UIView *)jkr_placeHolderView {
+    objc_setAssociatedObject(self, @selector(jkr_placeHolderView), jkr_placeHolderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    jkr_placeHolderView.hidden = YES;
+    [self insertSubview:jkr_placeHolderView atIndex:0];
 }
 
-- (UIView *)placeHolderView {
-    return objc_getAssociatedObject(self, @selector(placeHolderView));
+- (UIView *)jkr_placeHolderView {
+    return objc_getAssociatedObject(self, @selector(jkr_placeHolderView));
 }
 
-- (void)setPlaceHolderIgnoreFirstRow:(BOOL)placeHolderIgnoreFirstRow {
-    objc_setAssociatedObject(self, @selector(placeHolderIgnoreFirstRow), [NSNumber numberWithBool:placeHolderIgnoreFirstRow], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setJkr_placeHolderIgnoreFirstRow:(BOOL)jkr_placeHolderIgnoreFirstRow {
+    objc_setAssociatedObject(self, @selector(jkr_placeHolderIgnoreFirstRow), [NSNumber numberWithBool:jkr_placeHolderIgnoreFirstRow], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (BOOL)placeHolderIgnoreFirstRow {
-    return [objc_getAssociatedObject(self, @selector(placeHolderIgnoreFirstRow)) boolValue];
+- (BOOL)jkr_placeHolderIgnoreFirstRow {
+    return [objc_getAssociatedObject(self, @selector(jkr_placeHolderIgnoreFirstRow)) boolValue];
 }
 
 - (void)jkr_reloadData {
@@ -60,7 +60,7 @@
     }
     if ([dataSource respondsToSelector:@selector(tableView:numberOfRowsInSection:)]) {
         for (int i = 0; i < sectionCount; i++) {
-            if (i == 0 && self.placeHolderIgnoreFirstRow) {
+            if (i == 0 && self.jkr_placeHolderIgnoreFirstRow) {
                 continue;
             }
             if ([dataSource tableView:self numberOfRowsInSection:i]) {
@@ -68,9 +68,9 @@
                 break;
             }
         }
-        self.placeHolderView.hidden = !isEmpty;
+        self.jkr_placeHolderView.hidden = !isEmpty;
     } else {
-        self.placeHolderView.hidden = NO;
+        self.jkr_placeHolderView.hidden = NO;
     }
 }
 

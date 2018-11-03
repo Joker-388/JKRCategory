@@ -13,6 +13,7 @@ typedef void (^changeBlock)(id newValue);
 
 @interface NSObject (JKR_Observer)
 
+/// 给当前对象快速添加一个监听并在block中响应，默认是NSKeyValueObservingOptionNew
 - (void)jkr_addObserver:(NSObject *)object forKeyPath:(NSString *)keyPath change:(changeBlock)change;
 
 @end

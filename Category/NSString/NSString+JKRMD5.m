@@ -11,7 +11,7 @@
 
 @implementation NSString (JKRMD5)
 
--(NSString *)jkr_md5String {
+- (NSString *)jkr_md5String {
     CC_MD5_CTX md5;
     CC_MD5_Init (&md5);
     CC_MD5_Update (&md5, [self UTF8String], (CC_LONG) [self length]);
