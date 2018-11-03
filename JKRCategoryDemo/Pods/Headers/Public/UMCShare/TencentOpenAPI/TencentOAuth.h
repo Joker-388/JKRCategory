@@ -1,1 +1,0 @@
-../../../../UMCShare/UMShare/SocialLibraries/QQ/QQSDK/TencentOpenAPI.framework/Headers/TencentOAuth.h

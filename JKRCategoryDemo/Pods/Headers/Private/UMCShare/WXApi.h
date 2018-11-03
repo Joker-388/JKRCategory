@@ -1,1 +1,0 @@
-../../../UMCShare/UMShare/SocialLibraries/WeChat/WechatSDK/WXApi.h

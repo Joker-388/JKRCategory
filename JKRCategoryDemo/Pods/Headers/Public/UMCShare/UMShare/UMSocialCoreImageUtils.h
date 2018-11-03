@@ -1,1 +1,0 @@
-../../../../UMCShare/UMShare/UMShare.framework/Headers/UMSocialCoreImageUtils.h

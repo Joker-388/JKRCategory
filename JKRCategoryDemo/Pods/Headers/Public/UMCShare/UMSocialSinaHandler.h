@@ -1,1 +1,0 @@
-../../../UMCShare/UMShare/SocialLibraries/Sina/UMSocialSinaHandler.h
