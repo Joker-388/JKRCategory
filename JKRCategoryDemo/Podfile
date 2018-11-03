@@ -1,0 +1,17 @@
+platform:ios,'8.0'
+
+target 'JKRCategoryDemo' do
+
+pod 'UMCCommon'
+pod 'UMCSecurityPlugins'
+pod 'UMCShare/UI'
+pod 'UMCShare/Social/WeChat'
+pod 'UMCShare/Social/QQ'
+pod 'UMCShare/Social/Sina'
+pod 'RongCloudIM/IMLib', '~> 2.8.3'
+pod 'RongCloudIM/IMKit', '~> 2.8.3'
+pod 'RongCloudIM/CallLib', '~> 2.8.3'
+pod 'RongCloudIM/CallKit', '~> 2.8.3'
+pod 'JPush'
+
+end

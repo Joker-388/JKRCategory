@@ -1,0 +1,1 @@
+../../../UMCShare/UMShare/SocialLibraries/WeChat/WechatSDK/WechatAuthSDK.h

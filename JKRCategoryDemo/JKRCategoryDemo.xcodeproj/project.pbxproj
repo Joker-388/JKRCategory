@@ -1,0 +1,1028 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57261C67105FEC8552C9F8CE /* libPods-JKRCategoryDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 002BF22F1CD32424A70E7439 /* libPods-JKRCategoryDemo.a */; };
+		F3A9DB78218D892C0006BB89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DB77218D892C0006BB89 /* AppDelegate.m */; };
+		F3A9DB7B218D892C0006BB89 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DB7A218D892C0006BB89 /* ViewController.m */; };
+		F3A9DB7E218D892C0006BB89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3A9DB7C218D892C0006BB89 /* Main.storyboard */; };
+		F3A9DB80218D892D0006BB89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3A9DB7F218D892D0006BB89 /* Assets.xcassets */; };
+		F3A9DB83218D892D0006BB89 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3A9DB81218D892D0006BB89 /* LaunchScreen.storyboard */; };
+		F3A9DB86218D892D0006BB89 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DB85218D892D0006BB89 /* main.m */; };
+		F3A9DB90218D892D0006BB89 /* JKRCategoryDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DB8F218D892D0006BB89 /* JKRCategoryDemoTests.m */; };
+		F3A9DB9B218D892D0006BB89 /* JKRCategoryDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DB9A218D892D0006BB89 /* JKRCategoryDemoUITests.m */; };
+		F3A9DC0B218D89590006BB89 /* UIImage+JKRRender.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBAC218D89580006BB89 /* UIImage+JKRRender.m */; };
+		F3A9DC0C218D89590006BB89 /* UIImage+JKRImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBAE218D89580006BB89 /* UIImage+JKRImage.m */; };
+		F3A9DC0D218D89590006BB89 /* UIImage+JKR_MessageImage.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBAF218D89580006BB89 /* UIImage+JKR_MessageImage.m */; };
+		F3A9DC0E218D89590006BB89 /* UIImage+JKRBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBB1218D89580006BB89 /* UIImage+JKRBlur.m */; };
+		F3A9DC0F218D89590006BB89 /* PHAsset+JKRMovieURL.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBB5218D89580006BB89 /* PHAsset+JKRMovieURL.m */; };
+		F3A9DC10218D89590006BB89 /* UIView+JKR_HitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBB8218D89580006BB89 /* UIView+JKR_HitTest.m */; };
+		F3A9DC11218D89590006BB89 /* UIColor+JKRColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBBB218D89580006BB89 /* UIColor+JKRColor.m */; };
+		F3A9DC12218D89590006BB89 /* UIView+JKRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBC3218D89580006BB89 /* UIView+JKRTouch.m */; };
+		F3A9DC13218D89590006BB89 /* UIView+JKRTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBC4218D89580006BB89 /* UIView+JKRTapGestureRecognizer.m */; };
+		F3A9DC14218D89590006BB89 /* UIView+JKR_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBC5218D89580006BB89 /* UIView+JKR_Frame.m */; };
+		F3A9DC15218D89590006BB89 /* UIView+JKRSnap.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBC6218D89580006BB89 /* UIView+JKRSnap.m */; };
+		F3A9DC16218D89590006BB89 /* UIView+JKRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBC7218D89580006BB89 /* UIView+JKRViewController.m */; };
+		F3A9DC17218D89590006BB89 /* NSObject+JKR_Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBCA218D89580006BB89 /* NSObject+JKR_Observer.m */; };
+		F3A9DC18218D89590006BB89 /* NSObject+JKR_RunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBCD218D89580006BB89 /* NSObject+JKR_RunTime.m */; };
+		F3A9DC19218D89590006BB89 /* UITextView+JKRPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBD0218D89590006BB89 /* UITextView+JKRPlaceHolder.m */; };
+		F3A9DC1A218D89590006BB89 /* NSURL+JKRVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBD4218D89590006BB89 /* NSURL+JKRVideo.m */; };
+		F3A9DC1B218D89590006BB89 /* NSURL+JKRFileSize.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBD5218D89590006BB89 /* NSURL+JKRFileSize.m */; };
+		F3A9DC1C218D89590006BB89 /* UINavigationBar+JKRBottomLine.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBD7218D89590006BB89 /* UINavigationBar+JKRBottomLine.m */; };
+		F3A9DC1E218D89590006BB89 /* NSString+URLComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBDE218D89590006BB89 /* NSString+URLComponents.m */; };
+		F3A9DC1F218D89590006BB89 /* NSString+JKRMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBE0218D89590006BB89 /* NSString+JKRMD5.m */; };
+		F3A9DC20218D89590006BB89 /* NSString+JKRSize.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBE1218D89590006BB89 /* NSString+JKRSize.m */; };
+		F3A9DC21218D89590006BB89 /* NSString+JKRFile.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBE3218D89590006BB89 /* NSString+JKRFile.m */; };
+		F3A9DC23218D89590006BB89 /* UIViewController+JKRStatusBarStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBE8218D89590006BB89 /* UIViewController+JKRStatusBarStyle.m */; };
+		F3A9DC24218D89590006BB89 /* UINavigationController+JKRBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBEA218D89590006BB89 /* UINavigationController+JKRBackButton.m */; };
+		F3A9DC25218D89590006BB89 /* UINavigationController+JKRStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBEB218D89590006BB89 /* UINavigationController+JKRStatusBar.m */; };
+		F3A9DC26218D89590006BB89 /* UITableView+JKREmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBF0218D89590006BB89 /* UITableView+JKREmptyView.m */; };
+		F3A9DC27218D89590006BB89 /* UIGestureRecognizer+JKRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBF2218D89590006BB89 /* UIGestureRecognizer+JKRTouch.m */; };
+		F3A9DC28218D89590006BB89 /* AVAsset+JKRVideoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBF5218D89590006BB89 /* AVAsset+JKRVideoSize.m */; };
+		F3A9DC2A218D89590006BB89 /* AppDelegate+JKRConfigNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC00218D89590006BB89 /* AppDelegate+JKRConfigNavigation.m */; };
+		F3A9DC2C218D89590006BB89 /* AppDelegate+JKRADPage.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC02218D89590006BB89 /* AppDelegate+JKRADPage.m */; };
+		F3A9DC2F218D89590006BB89 /* AppDelegate+JKRRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC06218D89590006BB89 /* AppDelegate+JKRRootViewController.m */; };
+		F3A9DC31218D89590006BB89 /* NSDate+JKRDate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC0A218D89590006BB89 /* NSDate+JKRDate.m */; };
+		F3A9DC34218D896D0006BB89 /* NSString+JKRRegular.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC33218D896D0006BB89 /* NSString+JKRRegular.m */; };
+		F3A9DC37218D98A30006BB89 /* NSAttributedString+JKRSize.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC36218D98A30006BB89 /* NSAttributedString+JKRSize.m */; };
+		F3A9DC3D218D9E150006BB89 /* NSString+JKRSubNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC3C218D9E150006BB89 /* NSString+JKRSubNumber.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F3A9DB8C218D892D0006BB89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3A9DB6B218D892B0006BB89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3A9DB72218D892C0006BB89;
+			remoteInfo = JKRCategoryDemo;
+		};
+		F3A9DB97218D892D0006BB89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3A9DB6B218D892B0006BB89 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3A9DB72218D892C0006BB89;
+			remoteInfo = JKRCategoryDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		002BF22F1CD32424A70E7439 /* libPods-JKRCategoryDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JKRCategoryDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E022BE6FB155E8F53DE0CAF /* Pods-JKRCategoryDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKRCategoryDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-JKRCategoryDemo/Pods-JKRCategoryDemo.release.xcconfig"; sourceTree = "<group>"; };
+		CF25B96EB0FDF8D7B646A30D /* Pods-JKRCategoryDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKRCategoryDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JKRCategoryDemo/Pods-JKRCategoryDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		F3A9DB73218D892C0006BB89 /* JKRCategoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKRCategoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3A9DB76218D892C0006BB89 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F3A9DB77218D892C0006BB89 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F3A9DB79218D892C0006BB89 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F3A9DB7A218D892C0006BB89 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F3A9DB7D218D892C0006BB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F3A9DB7F218D892D0006BB89 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F3A9DB82218D892D0006BB89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F3A9DB84218D892D0006BB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3A9DB85218D892D0006BB89 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F3A9DB8B218D892D0006BB89 /* JKRCategoryDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKRCategoryDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3A9DB8F218D892D0006BB89 /* JKRCategoryDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKRCategoryDemoTests.m; sourceTree = "<group>"; };
+		F3A9DB91218D892D0006BB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3A9DB96218D892D0006BB89 /* JKRCategoryDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JKRCategoryDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3A9DB9A218D892D0006BB89 /* JKRCategoryDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JKRCategoryDemoUITests.m; sourceTree = "<group>"; };
+		F3A9DB9C218D892D0006BB89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3A9DBAC218D89580006BB89 /* UIImage+JKRRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKRRender.m"; sourceTree = "<group>"; };
+		F3A9DBAD218D89580006BB89 /* UIImage+JKRBlur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKRBlur.h"; sourceTree = "<group>"; };
+		F3A9DBAE218D89580006BB89 /* UIImage+JKRImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKRImage.m"; sourceTree = "<group>"; };
+		F3A9DBAF218D89580006BB89 /* UIImage+JKR_MessageImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKR_MessageImage.m"; sourceTree = "<group>"; };
+		F3A9DBB0218D89580006BB89 /* UIImage+JKRRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKRRender.h"; sourceTree = "<group>"; };
+		F3A9DBB1218D89580006BB89 /* UIImage+JKRBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JKRBlur.m"; sourceTree = "<group>"; };
+		F3A9DBB2218D89580006BB89 /* UIImage+JKRImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKRImage.h"; sourceTree = "<group>"; };
+		F3A9DBB3218D89580006BB89 /* UIImage+JKR_MessageImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JKR_MessageImage.h"; sourceTree = "<group>"; };
+		F3A9DBB5218D89580006BB89 /* PHAsset+JKRMovieURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PHAsset+JKRMovieURL.m"; sourceTree = "<group>"; };
+		F3A9DBB6218D89580006BB89 /* PHAsset+JKRMovieURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PHAsset+JKRMovieURL.h"; sourceTree = "<group>"; };
+		F3A9DBB8218D89580006BB89 /* UIView+JKR_HitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKR_HitTest.m"; sourceTree = "<group>"; };
+		F3A9DBB9218D89580006BB89 /* UIView+JKR_HitTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKR_HitTest.h"; sourceTree = "<group>"; };
+		F3A9DBBB218D89580006BB89 /* UIColor+JKRColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JKRColor.m"; sourceTree = "<group>"; };
+		F3A9DBBC218D89580006BB89 /* UIColor+JKRColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JKRColor.h"; sourceTree = "<group>"; };
+		F3A9DBBE218D89580006BB89 /* UIView+JKRTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRTouch.h"; sourceTree = "<group>"; };
+		F3A9DBBF218D89580006BB89 /* UIView+JKRTapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRTapGestureRecognizer.h"; sourceTree = "<group>"; };
+		F3A9DBC0218D89580006BB89 /* UIView+JKR_Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKR_Frame.h"; sourceTree = "<group>"; };
+		F3A9DBC1218D89580006BB89 /* UIView+JKRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRViewController.h"; sourceTree = "<group>"; };
+		F3A9DBC2218D89580006BB89 /* UIView+JKRSnap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRSnap.h"; sourceTree = "<group>"; };
+		F3A9DBC3218D89580006BB89 /* UIView+JKRTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRTouch.m"; sourceTree = "<group>"; };
+		F3A9DBC4218D89580006BB89 /* UIView+JKRTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRTapGestureRecognizer.m"; sourceTree = "<group>"; };
+		F3A9DBC5218D89580006BB89 /* UIView+JKR_Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKR_Frame.m"; sourceTree = "<group>"; };
+		F3A9DBC6218D89580006BB89 /* UIView+JKRSnap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRSnap.m"; sourceTree = "<group>"; };
+		F3A9DBC7218D89580006BB89 /* UIView+JKRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRViewController.m"; sourceTree = "<group>"; };
+		F3A9DBC9218D89580006BB89 /* NSObject+JKR_Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JKR_Observer.h"; sourceTree = "<group>"; };
+		F3A9DBCA218D89580006BB89 /* NSObject+JKR_Observer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JKR_Observer.m"; sourceTree = "<group>"; };
+		F3A9DBCC218D89580006BB89 /* NSObject+JKR_RunTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JKR_RunTime.h"; sourceTree = "<group>"; };
+		F3A9DBCD218D89580006BB89 /* NSObject+JKR_RunTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JKR_RunTime.m"; sourceTree = "<group>"; };
+		F3A9DBCF218D89590006BB89 /* UITextView+JKRPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+JKRPlaceHolder.h"; sourceTree = "<group>"; };
+		F3A9DBD0218D89590006BB89 /* UITextView+JKRPlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+JKRPlaceHolder.m"; sourceTree = "<group>"; };
+		F3A9DBD2218D89590006BB89 /* NSURL+JKRVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+JKRVideo.h"; sourceTree = "<group>"; };
+		F3A9DBD3218D89590006BB89 /* NSURL+JKRFileSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+JKRFileSize.h"; sourceTree = "<group>"; };
+		F3A9DBD4218D89590006BB89 /* NSURL+JKRVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+JKRVideo.m"; sourceTree = "<group>"; };
+		F3A9DBD5218D89590006BB89 /* NSURL+JKRFileSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+JKRFileSize.m"; sourceTree = "<group>"; };
+		F3A9DBD7218D89590006BB89 /* UINavigationBar+JKRBottomLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+JKRBottomLine.m"; sourceTree = "<group>"; };
+		F3A9DBD9218D89590006BB89 /* UINavigationBar+JKRBottomLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+JKRBottomLine.h"; sourceTree = "<group>"; };
+		F3A9DBDC218D89590006BB89 /* NSString+JKRSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JKRSize.h"; sourceTree = "<group>"; };
+		F3A9DBDD218D89590006BB89 /* NSString+JKRMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JKRMD5.h"; sourceTree = "<group>"; };
+		F3A9DBDE218D89590006BB89 /* NSString+URLComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLComponents.m"; sourceTree = "<group>"; };
+		F3A9DBDF218D89590006BB89 /* NSString+JKRFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+JKRFile.h"; sourceTree = "<group>"; };
+		F3A9DBE0218D89590006BB89 /* NSString+JKRMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKRMD5.m"; sourceTree = "<group>"; };
+		F3A9DBE1218D89590006BB89 /* NSString+JKRSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKRSize.m"; sourceTree = "<group>"; };
+		F3A9DBE2218D89590006BB89 /* NSString+URLComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLComponents.h"; sourceTree = "<group>"; };
+		F3A9DBE3218D89590006BB89 /* NSString+JKRFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKRFile.m"; sourceTree = "<group>"; };
+		F3A9DBE6218D89590006BB89 /* UIViewController+JKRStatusBarStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JKRStatusBarStyle.h"; sourceTree = "<group>"; };
+		F3A9DBE8218D89590006BB89 /* UIViewController+JKRStatusBarStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JKRStatusBarStyle.m"; sourceTree = "<group>"; };
+		F3A9DBEA218D89590006BB89 /* UINavigationController+JKRBackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JKRBackButton.m"; sourceTree = "<group>"; };
+		F3A9DBEB218D89590006BB89 /* UINavigationController+JKRStatusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+JKRStatusBar.m"; sourceTree = "<group>"; };
+		F3A9DBEC218D89590006BB89 /* UINavigationController+JKRBackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JKRBackButton.h"; sourceTree = "<group>"; };
+		F3A9DBED218D89590006BB89 /* UINavigationController+JKRStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+JKRStatusBar.h"; sourceTree = "<group>"; };
+		F3A9DBEF218D89590006BB89 /* UITableView+JKREmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+JKREmptyView.h"; sourceTree = "<group>"; };
+		F3A9DBF0218D89590006BB89 /* UITableView+JKREmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+JKREmptyView.m"; sourceTree = "<group>"; };
+		F3A9DBF2218D89590006BB89 /* UIGestureRecognizer+JKRTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+JKRTouch.m"; sourceTree = "<group>"; };
+		F3A9DBF3218D89590006BB89 /* UIGestureRecognizer+JKRTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+JKRTouch.h"; sourceTree = "<group>"; };
+		F3A9DBF5218D89590006BB89 /* AVAsset+JKRVideoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVAsset+JKRVideoSize.m"; sourceTree = "<group>"; };
+		F3A9DBF6218D89590006BB89 /* AVAsset+JKRVideoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVAsset+JKRVideoSize.h"; sourceTree = "<group>"; };
+		F3A9DBF8218D89590006BB89 /* AppDelegate+JKRConfigNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+JKRConfigNavigation.h"; sourceTree = "<group>"; };
+		F3A9DBFC218D89590006BB89 /* AppDelegate+JKRADPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+JKRADPage.h"; sourceTree = "<group>"; };
+		F3A9DBFE218D89590006BB89 /* AppDelegate+JKRRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+JKRRootViewController.h"; sourceTree = "<group>"; };
+		F3A9DC00218D89590006BB89 /* AppDelegate+JKRConfigNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JKRConfigNavigation.m"; sourceTree = "<group>"; };
+		F3A9DC02218D89590006BB89 /* AppDelegate+JKRADPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JKRADPage.m"; sourceTree = "<group>"; };
+		F3A9DC06218D89590006BB89 /* AppDelegate+JKRRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+JKRRootViewController.m"; sourceTree = "<group>"; };
+		F3A9DC09218D89590006BB89 /* NSDate+JKRDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+JKRDate.h"; sourceTree = "<group>"; };
+		F3A9DC0A218D89590006BB89 /* NSDate+JKRDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+JKRDate.m"; sourceTree = "<group>"; };
+		F3A9DC32218D896D0006BB89 /* NSString+JKRRegular.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JKRRegular.h"; sourceTree = "<group>"; };
+		F3A9DC33218D896D0006BB89 /* NSString+JKRRegular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKRRegular.m"; sourceTree = "<group>"; };
+		F3A9DC35218D98A30006BB89 /* NSAttributedString+JKRSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+JKRSize.h"; sourceTree = "<group>"; };
+		F3A9DC36218D98A30006BB89 /* NSAttributedString+JKRSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+JKRSize.m"; sourceTree = "<group>"; };
+		F3A9DC3B218D9E150006BB89 /* NSString+JKRSubNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JKRSubNumber.h"; sourceTree = "<group>"; };
+		F3A9DC3C218D9E150006BB89 /* NSString+JKRSubNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKRSubNumber.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F3A9DB70218D892C0006BB89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57261C67105FEC8552C9F8CE /* libPods-JKRCategoryDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3A9DB88218D892D0006BB89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3A9DB93218D892D0006BB89 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0DA2DD0A9406F7D2BFB6CD7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				002BF22F1CD32424A70E7439 /* libPods-JKRCategoryDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8013BC4AC7C8921DF928E52D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF25B96EB0FDF8D7B646A30D /* Pods-JKRCategoryDemo.debug.xcconfig */,
+				2E022BE6FB155E8F53DE0CAF /* Pods-JKRCategoryDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F3A9DB6A218D892B0006BB89 = {
+			isa = PBXGroup;
+			children = (
+				0DA2DD0A9406F7D2BFB6CD7C /* Frameworks */,
+				F3A9DB75218D892C0006BB89 /* JKRCategoryDemo */,
+				F3A9DB8E218D892D0006BB89 /* JKRCategoryDemoTests */,
+				F3A9DB99218D892D0006BB89 /* JKRCategoryDemoUITests */,
+				8013BC4AC7C8921DF928E52D /* Pods */,
+				F3A9DB74218D892C0006BB89 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F3A9DB74218D892C0006BB89 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DB73218D892C0006BB89 /* JKRCategoryDemo.app */,
+				F3A9DB8B218D892D0006BB89 /* JKRCategoryDemoTests.xctest */,
+				F3A9DB96218D892D0006BB89 /* JKRCategoryDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3A9DB75218D892C0006BB89 /* JKRCategoryDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBAA218D89580006BB89 /* Category */,
+				F3A9DB76218D892C0006BB89 /* AppDelegate.h */,
+				F3A9DB77218D892C0006BB89 /* AppDelegate.m */,
+				F3A9DB79218D892C0006BB89 /* ViewController.h */,
+				F3A9DB7A218D892C0006BB89 /* ViewController.m */,
+				F3A9DB7C218D892C0006BB89 /* Main.storyboard */,
+				F3A9DB7F218D892D0006BB89 /* Assets.xcassets */,
+				F3A9DB81218D892D0006BB89 /* LaunchScreen.storyboard */,
+				F3A9DB84218D892D0006BB89 /* Info.plist */,
+				F3A9DB85218D892D0006BB89 /* main.m */,
+			);
+			path = JKRCategoryDemo;
+			sourceTree = "<group>";
+		};
+		F3A9DB8E218D892D0006BB89 /* JKRCategoryDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DB8F218D892D0006BB89 /* JKRCategoryDemoTests.m */,
+				F3A9DB91218D892D0006BB89 /* Info.plist */,
+			);
+			path = JKRCategoryDemoTests;
+			sourceTree = "<group>";
+		};
+		F3A9DB99218D892D0006BB89 /* JKRCategoryDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DB9A218D892D0006BB89 /* JKRCategoryDemoUITests.m */,
+				F3A9DB9C218D892D0006BB89 /* Info.plist */,
+			);
+			path = JKRCategoryDemoUITests;
+			sourceTree = "<group>";
+		};
+		F3A9DBAA218D89580006BB89 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBAB218D89580006BB89 /* UIImage */,
+				F3A9DBB4218D89580006BB89 /* PHAsset */,
+				F3A9DBB7218D89580006BB89 /* UIResponder */,
+				F3A9DBBA218D89580006BB89 /* UIColor */,
+				F3A9DBBD218D89580006BB89 /* UIView */,
+				F3A9DBC8218D89580006BB89 /* KVO */,
+				F3A9DBCB218D89580006BB89 /* Runtime */,
+				F3A9DBCE218D89590006BB89 /* UITextView */,
+				F3A9DBD1218D89590006BB89 /* NSURL */,
+				F3A9DBD6218D89590006BB89 /* UINavigationBar */,
+				F3A9DBDB218D89590006BB89 /* NSString */,
+				F3A9DBE4218D89590006BB89 /* UIViewController */,
+				F3A9DBE9218D89590006BB89 /* UINavigationController */,
+				F3A9DBEE218D89590006BB89 /* UITableView */,
+				F3A9DBF1218D89590006BB89 /* UIGestureRecognizer */,
+				F3A9DBF4218D89590006BB89 /* AVAsset */,
+				F3A9DBF7218D89590006BB89 /* AppDelegate */,
+				F3A9DC08218D89590006BB89 /* NSDate */,
+			);
+			name = Category;
+			path = ../../Category;
+			sourceTree = "<group>";
+		};
+		F3A9DBAB218D89580006BB89 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBB3218D89580006BB89 /* UIImage+JKR_MessageImage.h */,
+				F3A9DBAF218D89580006BB89 /* UIImage+JKR_MessageImage.m */,
+				F3A9DBAD218D89580006BB89 /* UIImage+JKRBlur.h */,
+				F3A9DBB1218D89580006BB89 /* UIImage+JKRBlur.m */,
+				F3A9DBB2218D89580006BB89 /* UIImage+JKRImage.h */,
+				F3A9DBAE218D89580006BB89 /* UIImage+JKRImage.m */,
+				F3A9DBB0218D89580006BB89 /* UIImage+JKRRender.h */,
+				F3A9DBAC218D89580006BB89 /* UIImage+JKRRender.m */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		F3A9DBB4218D89580006BB89 /* PHAsset */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBB5218D89580006BB89 /* PHAsset+JKRMovieURL.m */,
+				F3A9DBB6218D89580006BB89 /* PHAsset+JKRMovieURL.h */,
+			);
+			path = PHAsset;
+			sourceTree = "<group>";
+		};
+		F3A9DBB7218D89580006BB89 /* UIResponder */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBB8218D89580006BB89 /* UIView+JKR_HitTest.m */,
+				F3A9DBB9218D89580006BB89 /* UIView+JKR_HitTest.h */,
+			);
+			path = UIResponder;
+			sourceTree = "<group>";
+		};
+		F3A9DBBA218D89580006BB89 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBBB218D89580006BB89 /* UIColor+JKRColor.m */,
+				F3A9DBBC218D89580006BB89 /* UIColor+JKRColor.h */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		F3A9DBBD218D89580006BB89 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBC0218D89580006BB89 /* UIView+JKR_Frame.h */,
+				F3A9DBC5218D89580006BB89 /* UIView+JKR_Frame.m */,
+				F3A9DBC2218D89580006BB89 /* UIView+JKRSnap.h */,
+				F3A9DBC6218D89580006BB89 /* UIView+JKRSnap.m */,
+				F3A9DBBF218D89580006BB89 /* UIView+JKRTapGestureRecognizer.h */,
+				F3A9DBC4218D89580006BB89 /* UIView+JKRTapGestureRecognizer.m */,
+				F3A9DBBE218D89580006BB89 /* UIView+JKRTouch.h */,
+				F3A9DBC3218D89580006BB89 /* UIView+JKRTouch.m */,
+				F3A9DBC1218D89580006BB89 /* UIView+JKRViewController.h */,
+				F3A9DBC7218D89580006BB89 /* UIView+JKRViewController.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		F3A9DBC8218D89580006BB89 /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBC9218D89580006BB89 /* NSObject+JKR_Observer.h */,
+				F3A9DBCA218D89580006BB89 /* NSObject+JKR_Observer.m */,
+			);
+			path = KVO;
+			sourceTree = "<group>";
+		};
+		F3A9DBCB218D89580006BB89 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBCC218D89580006BB89 /* NSObject+JKR_RunTime.h */,
+				F3A9DBCD218D89580006BB89 /* NSObject+JKR_RunTime.m */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
+		F3A9DBCE218D89590006BB89 /* UITextView */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBCF218D89590006BB89 /* UITextView+JKRPlaceHolder.h */,
+				F3A9DBD0218D89590006BB89 /* UITextView+JKRPlaceHolder.m */,
+			);
+			path = UITextView;
+			sourceTree = "<group>";
+		};
+		F3A9DBD1218D89590006BB89 /* NSURL */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBD2218D89590006BB89 /* NSURL+JKRVideo.h */,
+				F3A9DBD3218D89590006BB89 /* NSURL+JKRFileSize.h */,
+				F3A9DBD4218D89590006BB89 /* NSURL+JKRVideo.m */,
+				F3A9DBD5218D89590006BB89 /* NSURL+JKRFileSize.m */,
+			);
+			path = NSURL;
+			sourceTree = "<group>";
+		};
+		F3A9DBD6218D89590006BB89 /* UINavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBD9218D89590006BB89 /* UINavigationBar+JKRBottomLine.h */,
+				F3A9DBD7218D89590006BB89 /* UINavigationBar+JKRBottomLine.m */,
+			);
+			path = UINavigationBar;
+			sourceTree = "<group>";
+		};
+		F3A9DBDB218D89590006BB89 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBDF218D89590006BB89 /* NSString+JKRFile.h */,
+				F3A9DBE3218D89590006BB89 /* NSString+JKRFile.m */,
+				F3A9DBDD218D89590006BB89 /* NSString+JKRMD5.h */,
+				F3A9DBE0218D89590006BB89 /* NSString+JKRMD5.m */,
+				F3A9DC32218D896D0006BB89 /* NSString+JKRRegular.h */,
+				F3A9DC33218D896D0006BB89 /* NSString+JKRRegular.m */,
+				F3A9DBDC218D89590006BB89 /* NSString+JKRSize.h */,
+				F3A9DBE1218D89590006BB89 /* NSString+JKRSize.m */,
+				F3A9DC35218D98A30006BB89 /* NSAttributedString+JKRSize.h */,
+				F3A9DC36218D98A30006BB89 /* NSAttributedString+JKRSize.m */,
+				F3A9DBE2218D89590006BB89 /* NSString+URLComponents.h */,
+				F3A9DBDE218D89590006BB89 /* NSString+URLComponents.m */,
+				F3A9DC3B218D9E150006BB89 /* NSString+JKRSubNumber.h */,
+				F3A9DC3C218D9E150006BB89 /* NSString+JKRSubNumber.m */,
+			);
+			path = NSString;
+			sourceTree = "<group>";
+		};
+		F3A9DBE4218D89590006BB89 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBE6218D89590006BB89 /* UIViewController+JKRStatusBarStyle.h */,
+				F3A9DBE8218D89590006BB89 /* UIViewController+JKRStatusBarStyle.m */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		F3A9DBE9218D89590006BB89 /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBEC218D89590006BB89 /* UINavigationController+JKRBackButton.h */,
+				F3A9DBEA218D89590006BB89 /* UINavigationController+JKRBackButton.m */,
+				F3A9DBED218D89590006BB89 /* UINavigationController+JKRStatusBar.h */,
+				F3A9DBEB218D89590006BB89 /* UINavigationController+JKRStatusBar.m */,
+			);
+			path = UINavigationController;
+			sourceTree = "<group>";
+		};
+		F3A9DBEE218D89590006BB89 /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBEF218D89590006BB89 /* UITableView+JKREmptyView.h */,
+				F3A9DBF0218D89590006BB89 /* UITableView+JKREmptyView.m */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		F3A9DBF1218D89590006BB89 /* UIGestureRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBF2218D89590006BB89 /* UIGestureRecognizer+JKRTouch.m */,
+				F3A9DBF3218D89590006BB89 /* UIGestureRecognizer+JKRTouch.h */,
+			);
+			path = UIGestureRecognizer;
+			sourceTree = "<group>";
+		};
+		F3A9DBF4218D89590006BB89 /* AVAsset */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBF5218D89590006BB89 /* AVAsset+JKRVideoSize.m */,
+				F3A9DBF6218D89590006BB89 /* AVAsset+JKRVideoSize.h */,
+			);
+			path = AVAsset;
+			sourceTree = "<group>";
+		};
+		F3A9DBF7218D89590006BB89 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DBFC218D89590006BB89 /* AppDelegate+JKRADPage.h */,
+				F3A9DC02218D89590006BB89 /* AppDelegate+JKRADPage.m */,
+				F3A9DBF8218D89590006BB89 /* AppDelegate+JKRConfigNavigation.h */,
+				F3A9DC00218D89590006BB89 /* AppDelegate+JKRConfigNavigation.m */,
+				F3A9DBFE218D89590006BB89 /* AppDelegate+JKRRootViewController.h */,
+				F3A9DC06218D89590006BB89 /* AppDelegate+JKRRootViewController.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		F3A9DC08218D89590006BB89 /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				F3A9DC09218D89590006BB89 /* NSDate+JKRDate.h */,
+				F3A9DC0A218D89590006BB89 /* NSDate+JKRDate.m */,
+			);
+			path = NSDate;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F3A9DB72218D892C0006BB89 /* JKRCategoryDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3A9DB9F218D892D0006BB89 /* Build configuration list for PBXNativeTarget "JKRCategoryDemo" */;
+			buildPhases = (
+				72CCB3B3B10B8ACFC183E84D /* [CP] Check Pods Manifest.lock */,
+				F3A9DB6F218D892C0006BB89 /* Sources */,
+				F3A9DB70218D892C0006BB89 /* Frameworks */,
+				F3A9DB71218D892C0006BB89 /* Resources */,
+				79A2A59DED5A3404CCC85A32 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JKRCategoryDemo;
+			productName = JKRCategoryDemo;
+			productReference = F3A9DB73218D892C0006BB89 /* JKRCategoryDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F3A9DB8A218D892D0006BB89 /* JKRCategoryDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3A9DBA2218D892D0006BB89 /* Build configuration list for PBXNativeTarget "JKRCategoryDemoTests" */;
+			buildPhases = (
+				F3A9DB87218D892D0006BB89 /* Sources */,
+				F3A9DB88218D892D0006BB89 /* Frameworks */,
+				F3A9DB89218D892D0006BB89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3A9DB8D218D892D0006BB89 /* PBXTargetDependency */,
+			);
+			name = JKRCategoryDemoTests;
+			productName = JKRCategoryDemoTests;
+			productReference = F3A9DB8B218D892D0006BB89 /* JKRCategoryDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F3A9DB95218D892D0006BB89 /* JKRCategoryDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3A9DBA5218D892D0006BB89 /* Build configuration list for PBXNativeTarget "JKRCategoryDemoUITests" */;
+			buildPhases = (
+				F3A9DB92218D892D0006BB89 /* Sources */,
+				F3A9DB93218D892D0006BB89 /* Frameworks */,
+				F3A9DB94218D892D0006BB89 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3A9DB98218D892D0006BB89 /* PBXTargetDependency */,
+			);
+			name = JKRCategoryDemoUITests;
+			productName = JKRCategoryDemoUITests;
+			productReference = F3A9DB96218D892D0006BB89 /* JKRCategoryDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F3A9DB6B218D892B0006BB89 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Joker;
+				TargetAttributes = {
+					F3A9DB72218D892C0006BB89 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					F3A9DB8A218D892D0006BB89 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F3A9DB72218D892C0006BB89;
+					};
+					F3A9DB95218D892D0006BB89 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = F3A9DB72218D892C0006BB89;
+					};
+				};
+			};
+			buildConfigurationList = F3A9DB6E218D892B0006BB89 /* Build configuration list for PBXProject "JKRCategoryDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F3A9DB6A218D892B0006BB89;
+			productRefGroup = F3A9DB74218D892C0006BB89 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F3A9DB72218D892C0006BB89 /* JKRCategoryDemo */,
+				F3A9DB8A218D892D0006BB89 /* JKRCategoryDemoTests */,
+				F3A9DB95218D892D0006BB89 /* JKRCategoryDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3A9DB71218D892C0006BB89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3A9DB83218D892D0006BB89 /* LaunchScreen.storyboard in Resources */,
+				F3A9DB80218D892D0006BB89 /* Assets.xcassets in Resources */,
+				F3A9DB7E218D892C0006BB89 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3A9DB89218D892D0006BB89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3A9DB94218D892D0006BB89 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72CCB3B3B10B8ACFC183E84D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JKRCategoryDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79A2A59DED5A3404CCC85A32 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-JKRCategoryDemo/Pods-JKRCategoryDemo-resources.sh",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
+				"${PODS_ROOT}/UMCShare/UMShare/SocialLibraries/Sina/SinaSDK/WeiboSDK.bundle",
+				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RongCloud.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Emoji.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCConfig.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JKRCategoryDemo/Pods-JKRCategoryDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F3A9DB6F218D892C0006BB89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3A9DC0E218D89590006BB89 /* UIImage+JKRBlur.m in Sources */,
+				F3A9DB7B218D892C0006BB89 /* ViewController.m in Sources */,
+				F3A9DC14218D89590006BB89 /* UIView+JKR_Frame.m in Sources */,
+				F3A9DC27218D89590006BB89 /* UIGestureRecognizer+JKRTouch.m in Sources */,
+				F3A9DC17218D89590006BB89 /* NSObject+JKR_Observer.m in Sources */,
+				F3A9DC3D218D9E150006BB89 /* NSString+JKRSubNumber.m in Sources */,
+				F3A9DC0C218D89590006BB89 /* UIImage+JKRImage.m in Sources */,
+				F3A9DC0B218D89590006BB89 /* UIImage+JKRRender.m in Sources */,
+				F3A9DC13218D89590006BB89 /* UIView+JKRTapGestureRecognizer.m in Sources */,
+				F3A9DC2A218D89590006BB89 /* AppDelegate+JKRConfigNavigation.m in Sources */,
+				F3A9DC19218D89590006BB89 /* UITextView+JKRPlaceHolder.m in Sources */,
+				F3A9DC12218D89590006BB89 /* UIView+JKRTouch.m in Sources */,
+				F3A9DC25218D89590006BB89 /* UINavigationController+JKRStatusBar.m in Sources */,
+				F3A9DC34218D896D0006BB89 /* NSString+JKRRegular.m in Sources */,
+				F3A9DB86218D892D0006BB89 /* main.m in Sources */,
+				F3A9DC20218D89590006BB89 /* NSString+JKRSize.m in Sources */,
+				F3A9DC10218D89590006BB89 /* UIView+JKR_HitTest.m in Sources */,
+				F3A9DC24218D89590006BB89 /* UINavigationController+JKRBackButton.m in Sources */,
+				F3A9DC37218D98A30006BB89 /* NSAttributedString+JKRSize.m in Sources */,
+				F3A9DC1B218D89590006BB89 /* NSURL+JKRFileSize.m in Sources */,
+				F3A9DC18218D89590006BB89 /* NSObject+JKR_RunTime.m in Sources */,
+				F3A9DC0F218D89590006BB89 /* PHAsset+JKRMovieURL.m in Sources */,
+				F3A9DC2F218D89590006BB89 /* AppDelegate+JKRRootViewController.m in Sources */,
+				F3A9DC21218D89590006BB89 /* NSString+JKRFile.m in Sources */,
+				F3A9DC23218D89590006BB89 /* UIViewController+JKRStatusBarStyle.m in Sources */,
+				F3A9DC16218D89590006BB89 /* UIView+JKRViewController.m in Sources */,
+				F3A9DC11218D89590006BB89 /* UIColor+JKRColor.m in Sources */,
+				F3A9DC1A218D89590006BB89 /* NSURL+JKRVideo.m in Sources */,
+				F3A9DC26218D89590006BB89 /* UITableView+JKREmptyView.m in Sources */,
+				F3A9DB78218D892C0006BB89 /* AppDelegate.m in Sources */,
+				F3A9DC28218D89590006BB89 /* AVAsset+JKRVideoSize.m in Sources */,
+				F3A9DC15218D89590006BB89 /* UIView+JKRSnap.m in Sources */,
+				F3A9DC31218D89590006BB89 /* NSDate+JKRDate.m in Sources */,
+				F3A9DC2C218D89590006BB89 /* AppDelegate+JKRADPage.m in Sources */,
+				F3A9DC1F218D89590006BB89 /* NSString+JKRMD5.m in Sources */,
+				F3A9DC1E218D89590006BB89 /* NSString+URLComponents.m in Sources */,
+				F3A9DC1C218D89590006BB89 /* UINavigationBar+JKRBottomLine.m in Sources */,
+				F3A9DC0D218D89590006BB89 /* UIImage+JKR_MessageImage.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3A9DB87218D892D0006BB89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3A9DB90218D892D0006BB89 /* JKRCategoryDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3A9DB92218D892D0006BB89 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3A9DB9B218D892D0006BB89 /* JKRCategoryDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F3A9DB8D218D892D0006BB89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3A9DB72218D892C0006BB89 /* JKRCategoryDemo */;
+			targetProxy = F3A9DB8C218D892D0006BB89 /* PBXContainerItemProxy */;
+		};
+		F3A9DB98218D892D0006BB89 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3A9DB72218D892C0006BB89 /* JKRCategoryDemo */;
+			targetProxy = F3A9DB97218D892D0006BB89 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F3A9DB7C218D892C0006BB89 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3A9DB7D218D892C0006BB89 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F3A9DB81218D892D0006BB89 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3A9DB82218D892D0006BB89 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F3A9DB9D218D892D0006BB89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F3A9DB9E218D892D0006BB89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F3A9DBA0218D892D0006BB89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF25B96EB0FDF8D7B646A30D /* Pods-JKRCategoryDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JKRCategoryDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joker.category.JKRCategoryDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F3A9DBA1218D892D0006BB89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E022BE6FB155E8F53DE0CAF /* Pods-JKRCategoryDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JKRCategoryDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joker.category.JKRCategoryDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F3A9DBA3218D892D0006BB89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JKRCategoryDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joker.category.JKRCategoryDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JKRCategoryDemo.app/JKRCategoryDemo";
+			};
+			name = Debug;
+		};
+		F3A9DBA4218D892D0006BB89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JKRCategoryDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joker.category.JKRCategoryDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JKRCategoryDemo.app/JKRCategoryDemo";
+			};
+			name = Release;
+		};
+		F3A9DBA6218D892D0006BB89 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JKRCategoryDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joker.category.JKRCategoryDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JKRCategoryDemo;
+			};
+			name = Debug;
+		};
+		F3A9DBA7218D892D0006BB89 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JKRCategoryDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joker.category.JKRCategoryDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JKRCategoryDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F3A9DB6E218D892B0006BB89 /* Build configuration list for PBXProject "JKRCategoryDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3A9DB9D218D892D0006BB89 /* Debug */,
+				F3A9DB9E218D892D0006BB89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3A9DB9F218D892D0006BB89 /* Build configuration list for PBXNativeTarget "JKRCategoryDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3A9DBA0218D892D0006BB89 /* Debug */,
+				F3A9DBA1218D892D0006BB89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3A9DBA2218D892D0006BB89 /* Build configuration list for PBXNativeTarget "JKRCategoryDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3A9DBA3218D892D0006BB89 /* Debug */,
+				F3A9DBA4218D892D0006BB89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3A9DBA5218D892D0006BB89 /* Build configuration list for PBXNativeTarget "JKRCategoryDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3A9DBA6218D892D0006BB89 /* Debug */,
+				F3A9DBA7218D892D0006BB89 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F3A9DB6B218D892B0006BB89 /* Project object */;
+}

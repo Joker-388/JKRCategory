@@ -1,0 +1,74 @@
+PODS:
+  - JCore (1.2.5)
+  - JPush (3.1.1.1):
+    - JCore (~> 1.2.5)
+  - RongCloudIM/CallKit (2.8.32):
+    - RongCloudIM/CallLib
+    - RongCloudIM/IMKit
+  - RongCloudIM/CallLib (2.8.32):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMKit (2.8.32):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMLib (2.8.32)
+  - UMCCommon (1.5.3)
+  - UMCSecurityPlugins (1.0.6)
+  - UMCShare/Core (6.9.5):
+    - UMCCommon
+  - UMCShare/Social/QQ (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedQQ
+  - UMCShare/Social/ReducedQQ (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/ReducedSina (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/ReducedWeChat (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+  - UMCShare/Social/Sina (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedSina
+  - UMCShare/Social/WeChat (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+    - UMCShare/Social/ReducedWeChat
+  - UMCShare/UI (6.9.5):
+    - UMCCommon
+    - UMCShare/Core
+
+DEPENDENCIES:
+  - JPush
+  - RongCloudIM/CallKit (~> 2.8.3)
+  - RongCloudIM/CallLib (~> 2.8.3)
+  - RongCloudIM/IMKit (~> 2.8.3)
+  - RongCloudIM/IMLib (~> 2.8.3)
+  - UMCCommon
+  - UMCSecurityPlugins
+  - UMCShare/Social/QQ
+  - UMCShare/Social/Sina
+  - UMCShare/Social/WeChat
+  - UMCShare/UI
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - JCore
+    - JPush
+    - RongCloudIM
+    - UMCCommon
+    - UMCSecurityPlugins
+    - UMCShare
+
+SPEC CHECKSUMS:
+  JCore: 14706de2640b25fb77dbd02332696491407f37c9
+  JPush: 25dd9013fbe106082c14f9f30a82364ee98852fb
+  RongCloudIM: 48bfc2fcb8d7cae8ce1e19cb5fb26d6d90616375
+  UMCCommon: 016af43c0f769feb1ae1861d65aaf2b23b89c9c7
+  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
+  UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
+
+PODFILE CHECKSUM: 4fadc71add1a3d619524a7e3b7a7da8102e8984a
+
+COCOAPODS: 1.5.3
