@@ -52,6 +52,7 @@
 		F3A9DC37218D98A30006BB89 /* NSAttributedString+JKRSize.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC36218D98A30006BB89 /* NSAttributedString+JKRSize.m */; };
 		F3A9DC3D218D9E150006BB89 /* NSString+JKRSubNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC3C218D9E150006BB89 /* NSString+JKRSubNumber.m */; };
 		F3C9BE12218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C9BE11218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.m */; };
+		F3C9BE18218F02A700AC5EC8 /* NSObject+JKRTryMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C9BE17218F02A700AC5EC8 /* NSObject+JKRTryMethod.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,8 @@
 		F3A9DC3F218DA03A0006BB89 /* Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
 		F3C9BE10218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JKRImagesAnimation.h"; sourceTree = "<group>"; };
 		F3C9BE11218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JKRImagesAnimation.m"; sourceTree = "<group>"; };
+		F3C9BE16218F02A700AC5EC8 /* NSObject+JKRTryMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JKRTryMethod.h"; sourceTree = "<group>"; };
+		F3C9BE17218F02A700AC5EC8 /* NSObject+JKRTryMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JKRTryMethod.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,13 +273,13 @@
 		F3A9DBAA218D89580006BB89 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				F3C9BE19218F02AD00AC5EC8 /* NSObject */,
 				F3A9DBAB218D89580006BB89 /* UIImage */,
 				F3A9DBB4218D89580006BB89 /* PHAsset */,
 				F3A9DBB7218D89580006BB89 /* UIResponder */,
 				F3A9DBBA218D89580006BB89 /* UIColor */,
 				F3A9DBBD218D89580006BB89 /* UIView */,
 				F3A9DBC8218D89580006BB89 /* KVO */,
-				F3A9DBCB218D89580006BB89 /* Runtime */,
 				F3A9DBCE218D89590006BB89 /* UITextView */,
 				F3A9DBD1218D89590006BB89 /* NSURL */,
 				F3A9DBD6218D89590006BB89 /* UINavigationBar */,
@@ -361,15 +364,6 @@
 				F3A9DBCA218D89580006BB89 /* NSObject+JKR_Observer.m */,
 			);
 			path = KVO;
-			sourceTree = "<group>";
-		};
-		F3A9DBCB218D89580006BB89 /* Runtime */ = {
-			isa = PBXGroup;
-			children = (
-				F3A9DBCC218D89580006BB89 /* NSObject+JKR_RunTime.h */,
-				F3A9DBCD218D89580006BB89 /* NSObject+JKR_RunTime.m */,
-			);
-			path = Runtime;
 			sourceTree = "<group>";
 		};
 		F3A9DBCE218D89590006BB89 /* UITextView */ = {
@@ -489,6 +483,17 @@
 				F3A9DC0A218D89590006BB89 /* NSDate+JKRDate.m */,
 			);
 			path = NSDate;
+			sourceTree = "<group>";
+		};
+		F3C9BE19218F02AD00AC5EC8 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				F3C9BE16218F02A700AC5EC8 /* NSObject+JKRTryMethod.h */,
+				F3C9BE17218F02A700AC5EC8 /* NSObject+JKRTryMethod.m */,
+				F3A9DBCC218D89580006BB89 /* NSObject+JKR_RunTime.h */,
+				F3A9DBCD218D89580006BB89 /* NSObject+JKR_RunTime.m */,
+			);
+			path = NSObject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -651,6 +656,7 @@
 				F3A9DB7B218D892C0006BB89 /* ViewController.m in Sources */,
 				F3A9DC14218D89590006BB89 /* UIView+JKR_Frame.m in Sources */,
 				F3A9DC27218D89590006BB89 /* UIGestureRecognizer+JKRTouch.m in Sources */,
+				F3C9BE18218F02A700AC5EC8 /* NSObject+JKRTryMethod.m in Sources */,
 				F3A9DC17218D89590006BB89 /* NSObject+JKR_Observer.m in Sources */,
 				F3A9DC3D218D9E150006BB89 /* NSString+JKRSubNumber.m in Sources */,
 				F3A9DC0C218D89590006BB89 /* UIImage+JKRImage.m in Sources */,
