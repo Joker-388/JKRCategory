@@ -51,6 +51,7 @@
 		F3A9DC34218D896D0006BB89 /* NSString+JKRRegular.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC33218D896D0006BB89 /* NSString+JKRRegular.m */; };
 		F3A9DC37218D98A30006BB89 /* NSAttributedString+JKRSize.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC36218D98A30006BB89 /* NSAttributedString+JKRSize.m */; };
 		F3A9DC3D218D9E150006BB89 /* NSString+JKRSubNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC3C218D9E150006BB89 /* NSString+JKRSubNumber.m */; };
+		F3C9BE12218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C9BE11218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,8 @@
 		F3A9DC3B218D9E150006BB89 /* NSString+JKRSubNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JKRSubNumber.h"; sourceTree = "<group>"; };
 		F3A9DC3C218D9E150006BB89 /* NSString+JKRSubNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKRSubNumber.m"; sourceTree = "<group>"; };
 		F3A9DC3F218DA03A0006BB89 /* Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
+		F3C9BE10218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JKRImagesAnimation.h"; sourceTree = "<group>"; };
+		F3C9BE11218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JKRImagesAnimation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +296,8 @@
 		F3A9DBAB218D89580006BB89 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
+				F3C9BE10218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.h */,
+				F3C9BE11218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.m */,
 				F3A9DBB3218D89580006BB89 /* UIImage+JKR_MessageImage.h */,
 				F3A9DBAF218D89580006BB89 /* UIImage+JKR_MessageImage.m */,
 				F3A9DBAD218D89580006BB89 /* UIImage+JKRBlur.h */,
@@ -649,6 +654,7 @@
 				F3A9DC17218D89590006BB89 /* NSObject+JKR_Observer.m in Sources */,
 				F3A9DC3D218D9E150006BB89 /* NSString+JKRSubNumber.m in Sources */,
 				F3A9DC0C218D89590006BB89 /* UIImage+JKRImage.m in Sources */,
+				F3C9BE12218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.m in Sources */,
 				F3A9DC0B218D89590006BB89 /* UIImage+JKRRender.m in Sources */,
 				F3A9DC13218D89590006BB89 /* UIView+JKRTapGestureRecognizer.m in Sources */,
 				F3A9DC2A218D89590006BB89 /* AppDelegate+JKRConfigNavigation.m in Sources */,
