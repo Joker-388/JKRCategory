@@ -12,7 +12,7 @@
 #import "UIColor+JKRColor.h"
 #define JKRColor(r,g,b,a) [UIColor jkr_colorWithRed:r green:g blue:b alpha:a]
 #define JKRColorHex(_hex_) [UIColor jkr_colorWithHexString:((__bridge NSString *)CFSTR(#_hex_))]
-#import "UIView+JKR_Frame.h"
+#import "UIView+JKRFrame.h"
 #import "UIView+JKRViewController.h"
 #import "UIImage+JKRImage.h"
 #define kScreenWidth [[UIScreen mainScreen] bounds].size.width

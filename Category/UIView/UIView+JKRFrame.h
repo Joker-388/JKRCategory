@@ -1,5 +1,5 @@
 //
-//  UIView+JKR_Frame.h
+//  UIView+JKRFrame.h
 //  JKRDemo
 //
 //  Created by Lucky on 14/7/12.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (JKR_Frame)
+@interface UIView (JKRFrame)
 
 @property (nonatomic, assign) CGFloat x;
 @property (nonatomic, assign) CGFloat y;

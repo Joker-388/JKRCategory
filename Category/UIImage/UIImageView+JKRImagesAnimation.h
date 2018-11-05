@@ -1,9 +1,9 @@
 //
-//  UIImageView+CCImagesAnimation.h
+//  UIImageView+JKRImagesAnimation.h
 //  LuckyRocket
 //
-//  Created by chenfanfang on 2018/10/24.
-//  Copyright © 2018年 ShenYu. All rights reserved.
+//  Created by Joker on 2018/10/24.
+//  Copyright © 2018年 Joker. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -25,7 +25,7 @@
 		F3A9DC11218D89590006BB89 /* UIColor+JKRColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBBB218D89580006BB89 /* UIColor+JKRColor.m */; };
 		F3A9DC12218D89590006BB89 /* UIView+JKRTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBC3218D89580006BB89 /* UIView+JKRTouch.m */; };
 		F3A9DC13218D89590006BB89 /* UIView+JKRTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBC4218D89580006BB89 /* UIView+JKRTapGestureRecognizer.m */; };
-		F3A9DC14218D89590006BB89 /* UIView+JKR_Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBC5218D89580006BB89 /* UIView+JKR_Frame.m */; };
+		F3A9DC14218D89590006BB89 /* UIView+JKRFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBC5218D89580006BB89 /* UIView+JKRFrame.m */; };
 		F3A9DC15218D89590006BB89 /* UIView+JKRSnap.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBC6218D89580006BB89 /* UIView+JKRSnap.m */; };
 		F3A9DC16218D89590006BB89 /* UIView+JKRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBC7218D89580006BB89 /* UIView+JKRViewController.m */; };
 		F3A9DC17218D89590006BB89 /* NSObject+JKR_Observer.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DBCA218D89580006BB89 /* NSObject+JKR_Observer.m */; };
@@ -50,9 +50,10 @@
 		F3A9DC31218D89590006BB89 /* NSDate+JKRDate.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC0A218D89590006BB89 /* NSDate+JKRDate.m */; };
 		F3A9DC34218D896D0006BB89 /* NSString+JKRRegular.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC33218D896D0006BB89 /* NSString+JKRRegular.m */; };
 		F3A9DC37218D98A30006BB89 /* NSAttributedString+JKRSize.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC36218D98A30006BB89 /* NSAttributedString+JKRSize.m */; };
-		F3A9DC3D218D9E150006BB89 /* NSString+JKRSubNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = F3A9DC3C218D9E150006BB89 /* NSString+JKRSubNumber.m */; };
 		F3C9BE12218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C9BE11218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.m */; };
 		F3C9BE18218F02A700AC5EC8 /* NSObject+JKRTryMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C9BE17218F02A700AC5EC8 /* NSObject+JKRTryMethod.m */; };
+		F3C9BE28218FE6A700AC5EC8 /* NSString+JKRFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C9BE27218FE6A700AC5EC8 /* NSString+JKRFilter.m */; };
+		F3C9BE2B218FF0E900AC5EC8 /* UITextField+JKRFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C9BE29218FF0E900AC5EC8 /* UITextField+JKRFilter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,12 +109,12 @@
 		F3A9DBBC218D89580006BB89 /* UIColor+JKRColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JKRColor.h"; sourceTree = "<group>"; };
 		F3A9DBBE218D89580006BB89 /* UIView+JKRTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRTouch.h"; sourceTree = "<group>"; };
 		F3A9DBBF218D89580006BB89 /* UIView+JKRTapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRTapGestureRecognizer.h"; sourceTree = "<group>"; };
-		F3A9DBC0218D89580006BB89 /* UIView+JKR_Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKR_Frame.h"; sourceTree = "<group>"; };
+		F3A9DBC0218D89580006BB89 /* UIView+JKRFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRFrame.h"; sourceTree = "<group>"; };
 		F3A9DBC1218D89580006BB89 /* UIView+JKRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRViewController.h"; sourceTree = "<group>"; };
 		F3A9DBC2218D89580006BB89 /* UIView+JKRSnap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JKRSnap.h"; sourceTree = "<group>"; };
 		F3A9DBC3218D89580006BB89 /* UIView+JKRTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRTouch.m"; sourceTree = "<group>"; };
 		F3A9DBC4218D89580006BB89 /* UIView+JKRTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRTapGestureRecognizer.m"; sourceTree = "<group>"; };
-		F3A9DBC5218D89580006BB89 /* UIView+JKR_Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKR_Frame.m"; sourceTree = "<group>"; };
+		F3A9DBC5218D89580006BB89 /* UIView+JKRFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRFrame.m"; sourceTree = "<group>"; };
 		F3A9DBC6218D89580006BB89 /* UIView+JKRSnap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRSnap.m"; sourceTree = "<group>"; };
 		F3A9DBC7218D89580006BB89 /* UIView+JKRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JKRViewController.m"; sourceTree = "<group>"; };
 		F3A9DBC9218D89580006BB89 /* NSObject+JKR_Observer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JKR_Observer.h"; sourceTree = "<group>"; };
@@ -160,13 +161,15 @@
 		F3A9DC33218D896D0006BB89 /* NSString+JKRRegular.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKRRegular.m"; sourceTree = "<group>"; };
 		F3A9DC35218D98A30006BB89 /* NSAttributedString+JKRSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+JKRSize.h"; sourceTree = "<group>"; };
 		F3A9DC36218D98A30006BB89 /* NSAttributedString+JKRSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+JKRSize.m"; sourceTree = "<group>"; };
-		F3A9DC3B218D9E150006BB89 /* NSString+JKRSubNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JKRSubNumber.h"; sourceTree = "<group>"; };
-		F3A9DC3C218D9E150006BB89 /* NSString+JKRSubNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKRSubNumber.m"; sourceTree = "<group>"; };
 		F3A9DC3F218DA03A0006BB89 /* Prefix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prefix.h; sourceTree = "<group>"; };
 		F3C9BE10218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+JKRImagesAnimation.h"; sourceTree = "<group>"; };
 		F3C9BE11218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+JKRImagesAnimation.m"; sourceTree = "<group>"; };
 		F3C9BE16218F02A700AC5EC8 /* NSObject+JKRTryMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JKRTryMethod.h"; sourceTree = "<group>"; };
 		F3C9BE17218F02A700AC5EC8 /* NSObject+JKRTryMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JKRTryMethod.m"; sourceTree = "<group>"; };
+		F3C9BE26218FE6A700AC5EC8 /* NSString+JKRFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+JKRFilter.h"; sourceTree = "<group>"; };
+		F3C9BE27218FE6A700AC5EC8 /* NSString+JKRFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+JKRFilter.m"; sourceTree = "<group>"; };
+		F3C9BE29218FF0E900AC5EC8 /* UITextField+JKRFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+JKRFilter.m"; sourceTree = "<group>"; };
+		F3C9BE2A218FF0E900AC5EC8 /* UITextField+JKRFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+JKRFilter.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +276,7 @@
 		F3A9DBAA218D89580006BB89 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				F3C9BE2C218FF0F400AC5EC8 /* UITextField */,
 				F3C9BE19218F02AD00AC5EC8 /* NSObject */,
 				F3A9DBAB218D89580006BB89 /* UIImage */,
 				F3A9DBB4218D89580006BB89 /* PHAsset */,
@@ -343,8 +347,8 @@
 		F3A9DBBD218D89580006BB89 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				F3A9DBC0218D89580006BB89 /* UIView+JKR_Frame.h */,
-				F3A9DBC5218D89580006BB89 /* UIView+JKR_Frame.m */,
+				F3A9DBC0218D89580006BB89 /* UIView+JKRFrame.h */,
+				F3A9DBC5218D89580006BB89 /* UIView+JKRFrame.m */,
 				F3A9DBC2218D89580006BB89 /* UIView+JKRSnap.h */,
 				F3A9DBC6218D89580006BB89 /* UIView+JKRSnap.m */,
 				F3A9DBBF218D89580006BB89 /* UIView+JKRTapGestureRecognizer.h */,
@@ -410,8 +414,8 @@
 				F3A9DC36218D98A30006BB89 /* NSAttributedString+JKRSize.m */,
 				F3A9DBE2218D89590006BB89 /* NSString+URLComponents.h */,
 				F3A9DBDE218D89590006BB89 /* NSString+URLComponents.m */,
-				F3A9DC3B218D9E150006BB89 /* NSString+JKRSubNumber.h */,
-				F3A9DC3C218D9E150006BB89 /* NSString+JKRSubNumber.m */,
+				F3C9BE26218FE6A700AC5EC8 /* NSString+JKRFilter.h */,
+				F3C9BE27218FE6A700AC5EC8 /* NSString+JKRFilter.m */,
 			);
 			path = NSString;
 			sourceTree = "<group>";
@@ -494,6 +498,15 @@
 				F3A9DBCD218D89580006BB89 /* NSObject+JKR_RunTime.m */,
 			);
 			path = NSObject;
+			sourceTree = "<group>";
+		};
+		F3C9BE2C218FF0F400AC5EC8 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				F3C9BE2A218FF0E900AC5EC8 /* UITextField+JKRFilter.h */,
+				F3C9BE29218FF0E900AC5EC8 /* UITextField+JKRFilter.m */,
+			);
+			path = UITextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -652,13 +665,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C9BE2B218FF0E900AC5EC8 /* UITextField+JKRFilter.m in Sources */,
 				F3A9DC0E218D89590006BB89 /* UIImage+JKRBlur.m in Sources */,
 				F3A9DB7B218D892C0006BB89 /* ViewController.m in Sources */,
-				F3A9DC14218D89590006BB89 /* UIView+JKR_Frame.m in Sources */,
+				F3A9DC14218D89590006BB89 /* UIView+JKRFrame.m in Sources */,
 				F3A9DC27218D89590006BB89 /* UIGestureRecognizer+JKRTouch.m in Sources */,
 				F3C9BE18218F02A700AC5EC8 /* NSObject+JKRTryMethod.m in Sources */,
 				F3A9DC17218D89590006BB89 /* NSObject+JKR_Observer.m in Sources */,
-				F3A9DC3D218D9E150006BB89 /* NSString+JKRSubNumber.m in Sources */,
 				F3A9DC0C218D89590006BB89 /* UIImage+JKRImage.m in Sources */,
 				F3C9BE12218EF33A00AC5EC8 /* UIImageView+JKRImagesAnimation.m in Sources */,
 				F3A9DC0B218D89590006BB89 /* UIImage+JKRRender.m in Sources */,
@@ -671,6 +684,7 @@
 				F3A9DB86218D892D0006BB89 /* main.m in Sources */,
 				F3A9DC20218D89590006BB89 /* NSString+JKRSize.m in Sources */,
 				F3A9DC10218D89590006BB89 /* UIView+JKR_HitTest.m in Sources */,
+				F3C9BE28218FE6A700AC5EC8 /* NSString+JKRFilter.m in Sources */,
 				F3A9DC24218D89590006BB89 /* UINavigationController+JKRBackButton.m in Sources */,
 				F3A9DC37218D98A30006BB89 /* NSAttributedString+JKRSize.m in Sources */,
 				F3A9DC1B218D89590006BB89 /* NSURL+JKRFileSize.m in Sources */,

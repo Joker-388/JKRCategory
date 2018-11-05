@@ -3,7 +3,7 @@
 //  LuckyRocket
 //
 //  Created by Joker on 2018/11/4.
-//  Copyright © 2018 ShenYu. All rights reserved.
+//  Copyright © 2018 Joker. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
