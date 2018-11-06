@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (JKRTryMethod)
 
-- (void)jkr_tryWithBlock:(nullable void(^)())block catchBlock:(nullable void(^)(NSException *exception))catchBlock finallyBlock:(nullable void(^)())finallyBlock;
+- (void)jkr_tryWithBlock:(nullable void(^)(void))block catchBlock:(nullable void(^)(NSException *exception))catchBlock finallyBlock:(nullable void(^)(void))finallyBlock;
 
 @end
 

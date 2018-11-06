@@ -1,7 +1,6 @@
-
 //
 //  UIImageView+JKRImagesAnimation.m
-//  LuckyRocket
+//  JKRCategoryDemo
 //
 //  Created by Joker on 2018/10/24.
 //  Copyright © 2018年 Joker. All rights reserved.
@@ -26,6 +25,7 @@ static dispatch_source_t timer;
     dispatch_source_set_event_handler(timer, ^{
         if (i >= images.count) {
             dispatch_source_cancel(timer);
+            timer = nil;
             completion(YES);
         } else {
             self.image = images[i++];
@@ -52,8 +52,11 @@ static dispatch_source_t timer;
 }
 
 - (void)jkr_finishAnimation {
-    if (timer) dispatch_source_cancel(timer);
-    self.image = nil;
+    if (timer) {
+        dispatch_source_cancel(timer);
+        timer = nil;
+        self.image = nil;
+    }
 }
 
 @end

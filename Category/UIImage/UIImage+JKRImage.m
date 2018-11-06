@@ -11,10 +11,12 @@
 
 @implementation UIImage (JKRImage)
 
+#pragma mark - 根据颜色获取一张图片
 + (UIImage *)jkr_imageWithColor:(UIColor *)color {
     return [self jkr_imageWithColor:color size:CGSizeMake(1, 1)];
 }
 
+#pragma mark - 根据颜色和尺寸获取一张图片
 + (UIImage *)jkr_imageWithColor:(UIColor *)color size:(CGSize)size {
     if (!color || size.width <= 0 || size.height <= 0) return nil;
     CGRect rect = CGRectMake(0.f, 0.f, size.width, size.height);
@@ -27,6 +29,25 @@
     return image;
 }
 
+#pragma mark - 画一条水平虚线
++ (UIImage *)jkr_imaginaryLineWithTotalLength:(CGFloat)totalLength height:(CGFloat)height perLength:(CGFloat)perLength intervalLength:(CGFloat)intervalLength lineColor:(UIColor *)lineColor {
+    CGSize size = CGSizeMake(totalLength, height);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    if (!context) return nil;
+    [lineColor setFill];
+    CGContextSetLineWidth(context, height);
+    for (int i = 0; i < totalLength; i+= (intervalLength + intervalLength)) {
+        CGContextMoveToPoint(context, i * (perLength + intervalLength), 0.5);
+        CGContextAddLineToPoint(context, i * (perLength + intervalLength) + perLength, 0.5);
+    }
+    CGContextStrokePath(context);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+#pragma mark - 图片截圆加边框
 - (UIImage *)jkr_clipCircleImageWithBorder:(CGFloat)borderWidth withColor:(UIColor *)borderColor {
     CGFloat dia;
     if (self.size.width >= self.size.height) {
@@ -49,6 +70,7 @@
     return newImage;
 }
 
+#pragma mark - 图片根据宽度重绘
 - (UIImage *)jkr_compressWithWidth:(CGFloat)width {
     if (width <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) return nil;
     CGSize newSize = CGSizeMake(width, width * (self.size.height / self.size.width));
@@ -59,6 +81,7 @@
     return newImage;
 }
 
+#pragma mark - 压缩图片高质量
 - (void)jkr_compressToDataLength:(NSInteger)length withBlock :(void (^)(NSData *))block {
     if (length <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) {
         block(nil);
@@ -99,6 +122,7 @@
     });
 }
 
+#pragma mark - 压缩图片不准
 - (void)jkr_tryCompressToDataLength:(NSInteger)length withBlock:(void (^)(NSData *))block {
     if (length <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) block(nil);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -118,6 +142,7 @@
     });
 }
 
+#pragma mark - 压缩图片低质量
 - (void)jkr_fastCompressToDataLength:(NSInteger)length withBlock:(void (^)(NSData *))block {
     if (length <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) block(nil);
     CGFloat scale = 1.0;
@@ -140,6 +165,7 @@
     });
 }
 
+#pragma mark - 图片编辑
 - (void)jkr_fliterImageWithFliterBlock:(void (^)(int *, int *, int *))Fliterblock success:(void (^)(UIImage *))success{
     if ([self isKindOfClass:[NSNull class]] || self == nil) return;
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -205,21 +231,79 @@
     });
 }
 
-+ (UIImage *)jkr_imaginaryLineWithTotalLength:(CGFloat)totalLength height:(CGFloat)height perLength:(CGFloat)perLength intervalLength:(CGFloat)intervalLength lineColor:(UIColor *)lineColor {
-    CGSize size = CGSizeMake(totalLength, height);
-    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    if (!context) return nil;
-    [lineColor setFill];
-    CGContextSetLineWidth(context, height);
-    for (int i = 0; i < totalLength; i+= (intervalLength + intervalLength)) {
-        CGContextMoveToPoint(context, i * (perLength + intervalLength), 0.5);
-        CGContextAddLineToPoint(context, i * (perLength + intervalLength) + perLength, 0.5);
+#pragma mark - 图片方向矫正
+- (UIImage *)jkr_fixOrientation {
+    // No-op if the orientation is already correct
+    if (self.imageOrientation == UIImageOrientationUp) return self;
+    
+    // We need to calculate the proper transformation to make the image upright.
+    // We do it in 2 steps: Rotate if Left/Right/Down, and then flip if Mirrored.
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    
+    switch (self.imageOrientation) {
+            case UIImageOrientationDown:
+            case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, self.size.height);
+            transform = CGAffineTransformRotate(transform, M_PI);
+            break;
+            
+            case UIImageOrientationLeft:
+            case UIImageOrientationLeftMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, 0);
+            transform = CGAffineTransformRotate(transform, M_PI_2);
+            break;
+            
+            case UIImageOrientationRight:
+            case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform, 0, self.size.height);
+            transform = CGAffineTransformRotate(transform, -M_PI_2);
+            break;
+        default:
+            break;
     }
-    CGContextStrokePath(context);
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
+    
+    switch (self.imageOrientation) {
+            case UIImageOrientationUpMirrored:
+            case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+            
+            case UIImageOrientationLeftMirrored:
+            case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.height, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+        default:
+            break;
+    }
+    
+    // Now we draw the underlying CGImage into a new context, applying the transform
+    // calculated above.
+    CGContextRef ctx = CGBitmapContextCreate(NULL, self.size.width, self.size.height,
+                                             CGImageGetBitsPerComponent(self.CGImage), 0,
+                                             CGImageGetColorSpace(self.CGImage),
+                                             CGImageGetBitmapInfo(self.CGImage));
+    CGContextConcatCTM(ctx, transform);
+    switch (self.imageOrientation) {
+            case UIImageOrientationLeft:
+            case UIImageOrientationLeftMirrored:
+            case UIImageOrientationRight:
+            case UIImageOrientationRightMirrored:
+            // Grr...
+            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.height,self.size.width), self.CGImage);
+            break;
+            
+        default:
+            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.width,self.size.height), self.CGImage);
+            break;
+    }
+    
+    CGImageRef cgimg = CGBitmapContextCreateImage(ctx);
+    UIImage *img = [UIImage imageWithCGImage:cgimg];
+    CGContextRelease(ctx);
+    CGImageRelease(cgimg);
+    return img;
 }
 
 @end

@@ -10,7 +10,7 @@
 
 @implementation NSObject (JKRTryMethod)
 
-- (void)jkr_tryWithBlock:(void (^)())block catchBlock:(void (^)(NSException * _Nonnull))catchBlock finallyBlock:(void (^)())finallyBlock {
+- (void)jkr_tryWithBlock:(void (^)(void))block catchBlock:(void (^)(NSException * _Nonnull))catchBlock finallyBlock:(void (^)(void))finallyBlock {
     @try {
         if (block) block();
     } @catch (NSException *exception) {
