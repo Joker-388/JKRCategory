@@ -10,8 +10,8 @@
 
 @implementation NSString (JKRFilter)
 
-- (NSString *)jkr_filter_subNumberString {
-    if (!self || ![self containsString:@"."]) return self;
+- (NSString *)jkr_filter_subNumberStringWithDecimals:(NSInteger)decimals {
+    if (!self || ![self containsString:@"."] || decimals < 0 || decimals > 10) return self;
     BOOL hasComma = [self containsString:@","];
     NSString *subCommaString;
     if (hasComma) {
@@ -20,7 +20,9 @@
     } else {
         subCommaString = self;
     }
-    NSString *subfloatString = [NSString stringWithFormat:@"%.4f", subCommaString.doubleValue];
+    NSString *formatString = [NSString stringWithFormat:@"%%.%zdf", decimals];
+    NSInteger formatMultiplier = pow(10, decimals);
+    NSString *subfloatString = [NSString stringWithFormat:formatString, floor((subCommaString.doubleValue) * formatMultiplier) / formatMultiplier];
     NSString *ms = [NSString stringWithString:subfloatString];
     subNumberString(&ms);
     if (hasComma) {
