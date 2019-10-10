@@ -338,8 +338,8 @@
 		F3A9DBBA218D89580006BB89 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
-				F3A9DBBB218D89580006BB89 /* UIColor+JKRColor.m */,
 				F3A9DBBC218D89580006BB89 /* UIColor+JKRColor.h */,
+				F3A9DBBB218D89580006BB89 /* UIColor+JKRColor.m */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";

@@ -8,11 +8,13 @@
 
 #import "ViewController.h"
 #import "NSString+JKRFilter.h"
-
+#import "UIImageView+JKRImagesAnimation.h"
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) NSArray<UIImage *> *images;
+
 
 @end
 
@@ -20,44 +22,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    
 
-    {
-        NSString *test = @"98.01999";
-        NSLog(@"%@ -> %@", test, [test jkr_filter_subNumberStringWithDecimals:2]);
-    }
-    {
-        NSString *test = @"98.90999";
-        NSLog(@"%@ -> %@", test, [test jkr_filter_subNumberStringWithDecimals:2]);
-    }
-    {
-        NSString *test = @"123,456,789.01999";
-        NSLog(@"%@ -> %@", test, [test jkr_filter_subNumberStringWithDecimals:2]);
-    }
-    {
-        NSString *test = @"123,456,789.90999";
-        NSLog(@"%@ -> %@", test, [test jkr_filter_subNumberStringWithDecimals:2]);
-    }
-    
-    
-    {
-        NSString *test = @"98.012999";
-        NSLog(@"%@ -> %@", test, [test jkr_filter_subNumberStringWithDecimals:3]);
-    }
-    {
-        NSString *test = @"98.990999";
-        NSLog(@"%@ -> %@", test, [test jkr_filter_subNumberStringWithDecimals:3]);
-    }
-    {
-        NSString *test = @"123,456,789.012999";
-        NSLog(@"%@ -> %@", test, [test jkr_filter_subNumberStringWithDecimals:3]);
-    }
-    {
-        NSString *test = @"123,456,789.990999";
-        NSLog(@"%@ -> %@", test, [test jkr_filter_subNumberStringWithDecimals:3]);
-    }
-    
 }
 
+- (IBAction)start:(id)sender {
+    [self.imageView jkr_startAnimationWithDuration:3 images:self.images completion:^(BOOL finished) {
+        NSLog(@"finish");
+    }];
+}
 
+- (IBAction)startRepeat:(id)sender {
+    [self.imageView jkr_startRepeatAnimationWithDuration:3 images:self.images];
+}
+
+- (IBAction)stop:(id)sender {
+    [self.imageView jkr_finishAnimation];
+}
+
+- (NSArray<UIImage *> *)images {
+    if (!_images) {
+        NSMutableArray *array = [NSMutableArray array];
+        for (NSInteger i = 1; i < 13; i++) {
+            [array addObject:[UIImage imageNamed:[NSString stringWithFormat:@"ahud%zd", i]]];
+        }
+        _images = [NSArray arrayWithArray:array];
+    }
+    return _images;
+}
 
 @end
