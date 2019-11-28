@@ -10,9 +10,10 @@
 
 @interface UIImageView (JKRImagesAnimation)
 
-- (void)jkr_startAnimationWithDuration:(NSTimeInterval)duration images:(NSArray *)images completion:(void (^ __nullable)(BOOL finished))completion;
-- (void)jkr_startRepeatAnimationWithDuration:(NSTimeInterval)duration images:(NSArray *)images;
+- (void)jkr_startAnimationWithDuration:(NSTimeInterval)duration images:(NSArray *_Nonnull)images completion:(void (^ __nullable)(BOOL finished))completion;
+- (void)jkr_startRepeatAnimationWithDuration:(NSTimeInterval)duration images:(NSArray *_Nonnull)images;
 - (void)jkr_finishAnimation;
+- (BOOL)jkr_isPlayingAnimation;
 
 @end
 

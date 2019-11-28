@@ -39,46 +39,23 @@
  */
 + (UIImage *)jkr_imaginaryLineWithTotalLength:(CGFloat)totalLength height:(CGFloat)height perLength:(CGFloat)perLength intervalLength:(CGFloat)intervalLength lineColor:(UIColor *)lineColor;
 
-/**
- 裁剪圆形图片加边框
- 
- @param borderWidth 边框宽度
- @param borderColor 边框颜色
- @return 裁剪后图片
- */
+
+/// 裁剪圆形图片加边框
+/// @param borderWidth borderWidth 边框宽度
+/// @param borderColor borderColor 边框颜色
+/// @return 裁剪后图片
 - (UIImage *)jkr_clipCircleImageWithBorder:(CGFloat)borderWidth withColor:(UIColor *)borderColor;
  
-/**
- 压缩图片到指定宽度，通过重新绘制
- 
- @param width 新图片宽度尺寸
- @return 返回重绘的图片
- */
-- (UIImage *)jkr_compressWithWidth:(CGFloat)width;
+/// 压缩图片到指定宽度，通过重新绘制
+/// @param width 新图片宽度尺寸
+/// @return 绘制后图片
+- (UIImage *)jkr_drawWithWidth:(CGFloat)width;
 
-/**
- 压缩图片到指定大小，通过压缩+重绘，损耗小，时间长
- 
- @param length 要压缩到的文件大小
- @param block 返回图片
- */
-- (void)jkr_compressToDataLength:(NSInteger)length withBlock:(void(^)(NSData *data))block;
 
-/**
- 尽量压缩图片到指定大小，大图片很可能压缩不到指定大小
- 
- @param length 要压缩到的文件大小
- @param block 返回图片
- */
-- (void)jkr_tryCompressToDataLength:(NSInteger)length withBlock:(void(^)(NSData *data))block;
-
-/**
- 快速压缩图片到指定大小，损耗高
- 
- @param length 要压缩到的文件大小
- @param block 返回图片
- */
-- (void)jkr_fastCompressToDataLength:(NSInteger)length withBlock:(void(^)(NSData *data))block;
+/// 压缩图片
+/// @param length 文件大小 单位byte
+/// @return 压缩后的文件
+- (NSData *)jkr_compressWithLength:(NSInteger)length;
 
 /**
  通过修改r.g.b像素点来处理图片

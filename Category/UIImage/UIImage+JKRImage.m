@@ -71,7 +71,7 @@
 }
 
 #pragma mark - 图片根据宽度重绘
-- (UIImage *)jkr_compressWithWidth:(CGFloat)width {
+- (UIImage *)jkr_drawWithWidth:(CGFloat)width {
     if (width <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) return nil;
     CGSize newSize = CGSizeMake(width, width * (self.size.height / self.size.width));
     UIGraphicsBeginImageContext(newSize);
@@ -81,88 +81,53 @@
     return newImage;
 }
 
-#pragma mark - 压缩图片高质量
-- (void)jkr_compressToDataLength:(NSInteger)length withBlock :(void (^)(NSData *))block {
-    if (length <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) {
-        block(nil);
-        return;
-    }
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        UIImage *newImage = [self copy];
-        {
-            CGFloat clipScale = 0.9;
-            NSData *pngData = UIImagePNGRepresentation(self);
-            NSLog(@"Original pnglength %zd", pngData.length);
-            NSData *jpgData = UIImageJPEGRepresentation(self, 1.0);
-            NSLog(@"Original jpglength %zd", jpgData.length);
-            while (jpgData.length > length) {
-                NSData *newImageData = UIImageJPEGRepresentation(newImage, 0.0);
-                if (newImageData.length < length) {
-                    CGFloat scale = 1.0;
-                    newImageData = UIImageJPEGRepresentation(newImage, scale);
-                    while (newImageData.length > length) {
-                        scale -= 0.1;
-                        newImageData = UIImageJPEGRepresentation(newImage, scale);
-                    }
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        NSLog(@"Result jpglength %zd", newImageData.length);
-                        block(newImageData);
-                    });
-                    return;
-                } else {
-                    newImage = [newImage jkr_compressWithWidth:newImage.size.width * clipScale];
-                    jpgData = UIImageJPEGRepresentation(newImage, 1.0);
-                }
-            }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                NSLog(@"Result jpglength %zd", jpgData.length);
-                block(jpgData);
-            });
-        }
-    });
-}
 
-#pragma mark - 压缩图片不准
-- (void)jkr_tryCompressToDataLength:(NSInteger)length withBlock:(void (^)(NSData *))block {
-    if (length <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) block(nil);
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        CGFloat scale = 0.9;
-        NSData *scaleData = UIImageJPEGRepresentation(self, scale);
-        while (scaleData.length > length) {
-            scale -= 0.1;
-            if (scale < 0) {
+- (NSData *)jkr_compressWithLength:(NSInteger)length {
+    UIImage *image = [self copy];
+    CGFloat compression = 1;
+    NSData *imageData = UIImageJPEGRepresentation(image, compression);
+    NSUInteger fImageBytes = length;
+    if (imageData.length <= fImageBytes) return imageData;
+    CGFloat max = 1;
+    CGFloat min = 0;
+    compression = pow(2, -6);
+    imageData = UIImageJPEGRepresentation(image, compression);
+    if (imageData.length < fImageBytes) {
+        for (int i = 0; i < 6; ++i) {
+            compression = (max + min) / 2;
+            imageData = UIImageJPEGRepresentation(image, compression);
+            if (imageData.length < fImageBytes * 0.9) {
+                min = compression;
+            } else if (imageData.length > fImageBytes) {
+                max = compression;
+            } else {
                 break;
             }
-            NSLog(@"%f", scale);
-            scaleData = UIImageJPEGRepresentation(self, scale);
         }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            block(scaleData);
-        });
-    });
+        return imageData;
+    }
+    UIImage *resultImage = [UIImage imageWithData:imageData];
+    while (imageData.length > fImageBytes) {
+        @autoreleasepool {
+            CGFloat ratio = (CGFloat)fImageBytes / imageData.length;
+            CGSize size = CGSizeMake((NSUInteger)(resultImage.size.width * sqrtf(ratio)), (NSUInteger)(resultImage.size.height * sqrtf(ratio)));
+            resultImage = [self thumbnailForData:imageData maxPixelSize:MAX(size.width, size.height)];
+            imageData = UIImageJPEGRepresentation(resultImage, compression);
+        }
+    }
+    return imageData;
 }
 
-#pragma mark - 压缩图片低质量
-- (void)jkr_fastCompressToDataLength:(NSInteger)length withBlock:(void (^)(NSData *))block {
-    if (length <= 0 || [self isKindOfClass:[NSNull class]] || self == nil) block(nil);
-    CGFloat scale = 1.0;
-    UIImage *newImage = [self copy];
-     NSInteger newImageLength = UIImageJPEGRepresentation(newImage, 1.0).length;
-    while (newImageLength > length) {
-        NSLog(@"Do compress");
-        // 如果限定的大小比当前的尺寸大0.9的平方倍，就用开方求缩放倍数,减少缩放次数
-        if ((double)length / (double)newImageLength < 0.81) {
-            scale = sqrtf((double)length / (double)newImageLength);
-        } else {
-            scale = 0.9;
-        }
-        CGFloat width = newImage.size.width * scale;
-        newImage = [newImage jkr_compressWithWidth:width];
-        newImageLength = UIImageJPEGRepresentation(newImage, 1.0).length;
-    }
-    dispatch_async(dispatch_get_main_queue(), ^{
-        block(UIImageJPEGRepresentation(newImage, 1.0));
-    });
+- (UIImage *)thumbnailForData:(NSData *)data maxPixelSize:(NSUInteger)size {
+    CGDataProviderRef provider = CGDataProviderCreateWithCFData((__bridge CFDataRef)data);
+    CGImageSourceRef source = CGImageSourceCreateWithDataProvider(provider, NULL);
+    CGImageRef imageRef = CGImageSourceCreateThumbnailAtIndex(source, 0, (__bridge CFDictionaryRef) @{(NSString *)kCGImageSourceCreateThumbnailFromImageAlways : @YES, (NSString *)kCGImageSourceThumbnailMaxPixelSize : @(size), (NSString *)kCGImageSourceCreateThumbnailWithTransform : @YES,});
+    CFRelease(source);
+    CFRelease(provider);
+    if (!imageRef) return nil;
+    UIImage *toReturn = [UIImage imageWithCGImage:imageRef];
+    CFRelease(imageRef);
+    return toReturn;
 }
 
 #pragma mark - 图片编辑
